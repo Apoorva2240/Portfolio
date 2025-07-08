@@ -20,7 +20,6 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            /* This now points to your local image in the 'images' folder */
             background-image: url('images/background.jpg');
             background-attachment: fixed;
             background-size: cover;
@@ -28,7 +27,7 @@
             color: #1f2937; /* Gray-800 */
         }
         .section-title {
-            @apply text-3xl font-bold text-center mb-12;
+            @apply text-4xl font-bold text-center mb-12 text-gray-800;
         }
         .project-card {
             @apply bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300;
@@ -40,7 +39,7 @@
         .nav-link.active {
             @apply text-blue-600 font-bold;
         }
-        /* Add a subtle overlay to the body to improve text readability */
+        /* Dark overlay for the background image to improve text readability */
         body::before {
             content: '';
             position: fixed;
@@ -48,7 +47,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(255, 255, 255, 0.6); /* Light overlay */
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
             z-index: -1;
         }
         main > section {
@@ -87,9 +86,9 @@
     <main>
         <section id="home" class="py-20">
             <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-gray-900">Apoorva Bhatnagar</h1>
-                <p class="text-xl md:text-2xl text-blue-700 font-semibold mt-4">Where Consumer Insight Meets Marketing Strategy</p>
-                <p class="max-w-3xl mx-auto text-gray-700 mt-6 bg-white/50 backdrop-blur-sm p-4 rounded-lg">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white">Apoorva Bhatnagar</h1>
+                <p class="text-xl md:text-2xl text-blue-300 font-semibold mt-4">Where Consumer Insight Meets Marketing Strategy</p>
+                <p class="max-w-3xl mx-auto text-gray-200 mt-6 bg-black/20 backdrop-blur-sm p-4 rounded-lg">
                     Pivoting from a rich background in luxury hospitality to drive marketing success. I combine hands-on experience in premium brand environments with a Master's degree in Digital & Data Marketing to build strategies that resonate and deliver results.
                 </p>
                 <div class="mt-8">
@@ -101,7 +100,7 @@
         <section id="about" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl">
-                    <h2 class="text-3xl font-bold mb-6">About Me</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-center">About Me</h2>
                     <p class="text-gray-700 mb-4">
                         A data-driven marketing professional with a unique foundation in luxury hospitality and the culinary arts. With over two years of experience leading teams and managing operations in high-pressure, customer-centric environments like The Leela Palace, I have a deep, first-hand understanding of what drives consumer loyalty and creates a premium brand experience.
                     </p>
@@ -118,7 +117,7 @@
 
         <section id="projects" class="py-20">
             <div class="container mx-auto px-6">
-                <h2 class="section-title bg-white/80 backdrop-blur-sm inline-block px-4 py-2 rounded-lg shadow-md">Featured Projects</h2>
+                <h2 class="section-title text-white">Featured Projects</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <div class="project-card group">
