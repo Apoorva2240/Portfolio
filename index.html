@@ -29,17 +29,14 @@
         .section-title {
             @apply text-4xl font-bold text-center mb-12;
         }
-        .project-card {
-            @apply bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300;
-        }
         .skill-tag {
-            @apply bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full;
+            @apply bg-white/20 text-gray-200 text-xs font-medium px-3 py-1 rounded-full;
         }
         /* Style for the active navigation link */
         .nav-link.active {
             @apply text-blue-600 font-bold;
         }
-        /* Dark overlay for the background image to improve text readability */
+        /* Dark overlay for the background image */
         body::before {
             content: '';
             position: fixed;
@@ -47,7 +44,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.55); /* Darker overlay */
+            background-color: rgba(0, 0, 0, 0.55);
             z-index: -1;
         }
         main > section {
@@ -120,110 +117,68 @@
                 <h2 class="section-title text-white">Featured Projects</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <div class="project-card group">
-                        <div class="relative">
-                            <img src="images/Project1.png" alt="Digital Marketing Simternship Dashboard" class="w-full h-48 object-cover rounded-t-lg">
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 rounded-t-lg">
-                                <div class="text-center text-white p-4">
-                                    <div class="mb-2">
-                                        <p class="text-3xl font-bold">$166K+</p>
-                                        <p class="text-sm uppercase">Profit Generated</p>
-                                    </div>
-                                    <div class="mb-2">
-                                        <p class="text-3xl font-bold">2.39</p>
-                                        <p class="text-sm uppercase">Return on Ad Spend</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-3xl font-bold">4,971</p>
-                                        <p class="text-sm uppercase">Total Conversions</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">
-                                <a href="https://www.canva.com/design/DAGskiriLr8/wa_oB_ilfaun8fu9vRdhkg/edit?utm_content=DAGskiriLr8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                    <div class="group relative rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 aspect-[4/5]">
+                        <img src="images/Project1.png" alt="Digital Marketing Simternship Dashboard" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
+                            <h3 class="text-xl font-bold mb-2 text-white">
+                                <a href="https://www.canva.com/design/DAGskiriLr8/wa_oB_ilfaun8fu9vRdhkg/edit?utm_content=DAGskiriLr8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="hover:underline">
                                     Digital Marketing Simternship®
                                 </a>
                             </h3>
-                            <p class="text-gray-700 mb-4">Executed a comprehensive digital marketing strategy for a new e-commerce brand, managing a scaling budget across Search, Display, and Shopping ads to maximize profitability and ROAS.</p>
+                            <p class="text-gray-300 mb-4 text-sm">Executed a comprehensive digital marketing strategy for a new e-commerce brand, managing a scaling budget across Search, Display, and Shopping ads to maximize profitability and ROAS.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag">SEO/SEM</span>
-                                <span class="skill-tag">PPC</span>
-                                <span class="skill-tag">Budget Management</span>
-                                <span class="skill-tag">KPI Analysis</span>
+                                <span class="skill-tag">SEO/SEM</span><span class="skill-tag">PPC</span><span class="skill-tag">Budget Management</span>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <div class="text-center text-white p-4">
+                                <div class="mb-4"><p class="text-4xl font-bold">$166K+</p><p class="text-sm uppercase tracking-wider">Profit Generated</p></div>
+                                <div class="mb-4"><p class="text-4xl font-bold">2.39</p><p class="text-sm uppercase tracking-wider">Return on Ad Spend</p></div>
+                                <div><p class="text-4xl font-bold">4,971</p><p class="text-sm uppercase tracking-wider">Total Conversions</p></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="project-card group">
-                        <div class="relative">
-                            <img src="images/Project2.png" alt="Social Media Simternship Dashboard" class="w-full h-48 object-cover rounded-t-lg">
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 rounded-t-lg">
-                                <div class="text-center text-white p-4">
-                                    <div class="mb-2">
-                                        <p class="text-3xl font-bold">$66K+</p>
-                                        <p class="text-sm uppercase">Revenue (Instagram)</p>
-                                    </div>
-                                    <div class="mb-2">
-                                        <p class="text-3xl font-bold">3.64x</p>
-                                        <p class="text-sm uppercase">Influencer ROAS</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-3xl font-bold">80K+</p>
-                                        <p class="text-sm uppercase">Total Engagements</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">
-                                <a href="https://www.canva.com/design/DAGsky-mc0M/650QuBfgNT26gEcbNZaQIg/edit?utm_content=DAGsky-mc0M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                    <div class="group relative rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 aspect-[4/5]">
+                        <img src="images/Project2.png" alt="Social Media Simternship Dashboard" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
+                            <h3 class="text-xl font-bold mb-2 text-white">
+                                <a href="https://www.canva.com/design/DAGsky-mc0M/650QuBfgNT26gEcbNZaQIg/edit?utm_content=DAGsky-mc0M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="hover:underline">
                                     Social Media Simternship®
                                 </a>
                             </h3>
-                            <p class="text-gray-700 mb-4">Developed a social media launch strategy, using audience analysis and performance data to select platforms, manage influencer campaigns, and drive revenue with a high ROI.</p>
+                            <p class="text-gray-300 mb-4 text-sm">Developed a social media launch strategy, using audience analysis and performance data to select platforms, manage influencer campaigns, and drive revenue with a high ROI.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag">Social Media Strategy</span>
-                                <span class="skill-tag">Influencer Marketing</span>
-                                <span class="skill-tag">Content Management</span>
-                                <span class="skill-tag">Data Analysis</span>
+                                <span class="skill-tag">Social Media</span><span class="skill-tag">Influencer Marketing</span><span class="skill-tag">Data Analysis</span>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <div class="text-center text-white p-4">
+                                <div class="mb-4"><p class="text-4xl font-bold">$66K+</p><p class="text-sm uppercase tracking-wider">Revenue (Instagram)</p></div>
+                                <div class="mb-4"><p class="text-4xl font-bold">3.64x</p><p class="text-sm uppercase tracking-wider">Influencer ROAS</p></div>
+                                <div><p class="text-4xl font-bold">80K+</p><p class="text-sm uppercase tracking-wider">Total Engagements</p></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="project-card group">
-                        <div class="relative">
-                            <img src="images/Project3.png" alt="Teaology Presentation Slide" class="w-full h-48 object-cover rounded-t-lg">
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 rounded-t-lg">
-                                <div class="text-center text-white p-4">
-                                    <div class="mb-2">
-                                        <p class="text-3xl font-bold">$2.8B</p>
-                                        <p class="text-sm uppercase">Market Forecast (2030)</p>
-                                    </div>
-                                    <div class="mb-2">
-                                        <p class="text-3xl font-bold">$14M</p>
-                                        <p class="text-sm uppercase">Revenue Opportunity</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-3xl font-bold">0.5%</p>
-                                        <p class="text-sm uppercase">Target Market Share</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">
-                                <a href="https://www.canva.com/design/DAGsktSapKc/KIM95-f7g0PdcVJGbmaDXQ/edit?utm_content=DAGsktSapKc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                    <div class="group relative rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 aspect-[4/5]">
+                        <img src="images/Project3.png" alt="Teaology Presentation Slide" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
+                            <h3 class="text-xl font-bold mb-2 text-white">
+                                <a href="https://www.canva.com/design/DAGsktSapKc/KIM95-f7g0PdcVJGbmaDXQ/edit?utm_content=DAGsktSapKc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="hover:underline">
                                     Global Marketing Strategy: Teaology
                                 </a>
                             </h3>
-                            <p class="text-gray-700 mb-4">Conducted a market entry analysis for a skincare brand launching in Canada. Delivered a strategic plan including market sizing, competitor analysis, and localized growth initiatives.</p>
+                            <p class="text-gray-300 mb-4 text-sm">Conducted a market entry analysis for a skincare brand launching in Canada. Delivered a strategic plan including market sizing, competitor analysis, and localized growth initiatives.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag">Market Analysis</span>
-                                <span class="skill-tag">Go-to-Market Strategy</span>
-                                <span class="skill-tag">Competitor Research</span>
-                                <span class="skill-tag">Forecasting</span>
+                                <span class="skill-tag">Market Analysis</span><span class="skill-tag">Go-to-Market</span><span class="skill-tag">Forecasting</span>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <div class="text-center text-white p-4">
+                                <div class="mb-4"><p class="text-4xl font-bold">$2.8B</p><p class="text-sm uppercase tracking-wider">Market Forecast (2030)</p></div>
+                                <div class="mb-4"><p class="text-4xl font-bold">$14M</p><p class="text-sm uppercase tracking-wider">Revenue Opportunity</p></div>
+                                <div><p class="text-4xl font-bold">0.5%</p><p class="text-sm uppercase tracking-wider">Target Market Share</p></div>
                             </div>
                         </div>
                     </div>
