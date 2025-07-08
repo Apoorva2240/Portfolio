@@ -32,51 +32,53 @@
         .skill-tag {
             @apply bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full;
         }
+        /* Style for the active navigation link */
+        .nav-link.active {
+            @apply text-blue-600 font-bold;
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header & Navigation -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold">Apoorva Bhatnagar</a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#about" class="text-gray-600 hover:text-blue-600">About</a>
-                <a href="#projects" class="text-gray-600 hover:text-blue-600">Projects</a>
-                <a href="#skills" class="text-gray-600 hover:text-blue-600">Skills</a>
-                <a href="#experience" class="text-gray-600 hover:text-blue-600">Experience</a>
-                <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">Contact</a>
+            <a href="#home" class="text-xl font-bold">Apoorva Bhatnagar</a>
+            <div id="desktop-menu" class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="nav-link text-gray-600 hover:text-blue-600 transition-colors duration-200">Home</a>
+                <a href="#about" class="nav-link text-gray-600 hover:text-blue-600 transition-colors duration-200">About</a>
+                <a href="#projects" class="nav-link text-gray-600 hover:text-blue-600 transition-colors duration-200">Projects</a>
+                <a href="#skills" class="nav-link text-gray-600 hover:text-blue-600 transition-colors duration-200">Skills</a>
+                <a href="#experience" class="nav-link text-gray-600 hover:text-blue-600 transition-colors duration-200">Experience</a>
+                <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200">Contact</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600">About</a>
-            <a href="#projects" class="block py-2 text-gray-600 hover:text-blue-600">Projects</a>
-            <a href="#skills" class="block py-2 text-gray-600 hover:text-blue-600">Skills</a>
-            <a href="#experience" class="block py-2 text-gray-600 hover:text-blue-600">Experience</a>
+            <a href="#home" class="nav-link block py-2 text-gray-600 hover:text-blue-600">Home</a>
+            <a href="#about" class="nav-link block py-2 text-gray-600 hover:text-blue-600">About</a>
+            <a href="#projects" class="nav-link block py-2 text-gray-600 hover:text-blue-600">Projects</a>
+            <a href="#skills" class="nav-link block py-2 text-gray-600 hover:text-blue-600">Skills</a>
+            <a href="#experience" class="nav-link block py-2 text-gray-600 hover:text-blue-600">Experience</a>
             <a href="#contact" class="block mt-2 bg-blue-600 text-white text-center px-4 py-2 rounded-full hover:bg-blue-700">Contact</a>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="py-20 bg-white">
+        <section id="home" class="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-100">
             <div class="container mx-auto px-6 text-center">
                 <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Apoorva Bhatnagar</h1>
-                <p class="text-xl md:text-2xl text-blue-600 font-semibold mt-4">Marketing Strategist | Digital, Brand & Consumer Experience</p>
+                <p class="text-xl md:text-2xl text-blue-700 font-semibold mt-4">Where Consumer Insight Meets Marketing Strategy</p>
                 <p class="max-w-3xl mx-auto text-gray-600 mt-6">
                     Pivoting from a rich background in luxury hospitality to drive marketing success. I combine hands-on experience in premium brand environments with a Master's degree in Digital & Data Marketing to build strategies that resonate and deliver results.
                 </p>
                 <div class="mt-8">
-                    <a href="#projects" class="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-300">View My Work</a>
+                    <a href="#projects" class="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">View My Work</a>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-lg">
@@ -95,17 +97,14 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="py-20">
             <div class="container mx-auto px-6">
                 <h2 class="section-title">Featured Projects</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <!-- Project 1 -->
                     <div class="project-card group">
                         <div class="relative">
-                            <img src="https://storage.googleapis.com/aai-web-samples/abhatnagar/project1.png" alt="Digital Marketing Simternship Dashboard" class="w-full h-48 object-cover">
-                            <!-- Hover Overlay -->
+                            <img src="images/project1.png" alt="Digital Marketing Simternship Dashboard" class="w-full h-48 object-cover">
                             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                                 <div class="text-center text-white p-4">
                                     <div class="mb-2">
@@ -135,11 +134,9 @@
                         </div>
                     </div>
 
-                    <!-- Project 2 -->
                     <div class="project-card group">
                         <div class="relative">
-                            <img src="https://storage.googleapis.com/aai-web-samples/abhatnagar/project2.png" alt="Social Media Simternship Dashboard" class="w-full h-48 object-cover">
-                            <!-- Hover Overlay -->
+                            <img src="images/project2.png" alt="Social Media Simternship Dashboard" class="w-full h-48 object-cover">
                             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                                 <div class="text-center text-white p-4">
                                     <div class="mb-2">
@@ -169,11 +166,9 @@
                         </div>
                     </div>
 
-                    <!-- Project 3 -->
                     <div class="project-card group">
                         <div class="relative">
-                            <img src="https://storage.googleapis.com/aai-web-samples/abhatnagar/project3.png" alt="Teaology Presentation Slide" class="w-full h-48 object-cover">
-                            <!-- Hover Overlay -->
+                            <img src="images/project3.png" alt="Teaology Presentation Slide" class="w-full h-48 object-cover">
                             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                                 <div class="text-center text-white p-4">
                                     <div class="mb-2">
@@ -192,7 +187,11 @@
                             </div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Global Marketing Strategy: Teaology</h3>
+                            <h3 class="text-xl font-bold mb-2">
+                                <a href="https://www.canva.com/design/DAGsktSapKc/KIM95-f7g0PdcVJGbmaDXQ/edit?utm_content=DAGsktSapKc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                                    Global Marketing Strategy: Teaology
+                                </a>
+                            </h3>
                             <p class="text-gray-600 mb-4">Conducted a market entry analysis for a skincare brand launching in Canada. Delivered a strategic plan including market sizing, competitor analysis, and localized growth initiatives.</p>
                             <div class="flex flex-wrap gap-2">
                                 <span class="skill-tag">Market Analysis</span>
@@ -207,7 +206,6 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="section-title">Skills & Expertise</h2>
@@ -256,12 +254,10 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience" class="py-20">
             <div class="container mx-auto px-6">
                 <h2 class="section-title">Professional Experience</h2>
                 <div class="max-w-3xl mx-auto space-y-8 relative border-l-2 border-gray-200 pl-10">
-                    <!-- Experience Item 1 -->
                     <div class="relative">
                         <div class="absolute -left-11 top-1 w-6 h-6 bg-blue-600 rounded-full border-4 border-white"></div>
                         <p class="text-sm text-gray-500">Oct 2023 - May 2024</p>
@@ -269,7 +265,6 @@
                         <p class="font-semibold text-gray-700">ANAMIVA by AM Kollection, Goa</p>
                         <p class="mt-2 text-gray-600">Led a 14-member team in a product-focused role, ensuring brand consistency and quality control. Managed project lifecycles and coordinated with senior management and marketing to align operational execution with business goals.</p>
                     </div>
-                    <!-- Experience Item 2 -->
                     <div class="relative">
                         <div class="absolute -left-11 top-1 w-6 h-6 bg-blue-600 rounded-full border-4 border-white"></div>
                         <p class="text-sm text-gray-500">July 2022 - July 2023</p>
@@ -277,7 +272,6 @@
                         <p class="font-semibold text-gray-700">MEGU - The Leela Palace, New Delhi</p>
                         <p class="mt-2 text-gray-600">Executed brand standards for a globally recognized luxury product (Asia's 50 Best Restaurants 2022). Contributed to a premium customer experience by ensuring consistency and quality under pressure.</p>
                     </div>
-                    <!-- Experience Item 3 -->
                     <div class="relative">
                         <div class="absolute -left-11 top-1 w-6 h-6 bg-blue-600 rounded-full border-4 border-white"></div>
                         <p class="text-sm text-gray-500">Sept 2021 - Jan 2022</p>
@@ -289,7 +283,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="py-20 bg-white">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl font-bold">Let's Connect</h2>
@@ -309,13 +302,48 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu on link click
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Active navigation link on scroll
+            const sections = document.querySelectorAll('main section[id]');
+            const navLinks = document.querySelectorAll('a.nav-link'); // Select all nav links
+            
+            const activateNavLink = (id) => {
+                 navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        activateNavLink(entry.target.id);
+                    }
+                });
+            }, { 
+                rootMargin: "-40% 0px -60% 0px"
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
         });
     </script>
 </body>
 </html>
-
