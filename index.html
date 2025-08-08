@@ -130,7 +130,7 @@
         .horizontal-container {
             display: flex;
             justify-content: center;
-            align-items: center; /* Corrected alignment */
+            align-items: center;
             gap: 20px;
             padding: 50px;
         }
@@ -147,10 +147,10 @@
             border: none;
             overflow: hidden;
             position: relative;
-            border-radius: 20px; /* Added rounded edges */
+            border-radius: 20px;
         }
         
-        /* New CSS for the darkening overlay */
+        /* CSS for the carousel overlay */
         .carousel-container::before {
             content: '';
             position: absolute;
@@ -164,7 +164,6 @@
             z-index: 5;
         }
         
-        /* The darkening effect and text appear on hover */
         .carousel-container:hover::before {
             opacity: 1;
         }
@@ -192,22 +191,67 @@
         .video-section {
             text-align: center;
             max-width: 600px;
+            position: relative; /* Crucial for overlay positioning */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden; /* Ensures rounded edges are applied */
+            border-radius: 20px;
         }
         
-        .video-section h2 {
-            margin-bottom: 15px;
-            font-family: sans-serif;
-            color: #333;
+        .video-section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         .video-section video {
             width: 100%;
             height: 400px;
             object-fit: cover;
-            border-radius: 20px; /* Added rounded edges */
+            display: block;
         }
 
-        /* CSS for the Text Overlay */
+        /* CSS for the Video Overlay */
+        .video-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 5;
+            pointer-events: none;
+        }
+        
+        .video-section:hover::before {
+            opacity: 1;
+        }
+        
+        .video-overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            z-index: 10;
+            pointer-events: none;
+            width: 80%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .video-section:hover .video-overlay-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* CSS for the Carousel Text Overlay */
         .carousel-overlay {
             position: absolute;
             top: 50%;
@@ -247,54 +291,7 @@
         </div>
 
         <div class="video-section">
-            <h2>Video Menu for Prospects</h2>
-            <video controls>
-                <source src="Satiate/Satiate video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-
-    <script>
-        const carouselSlide = document.querySelector('.carousel-slide');
-        const carouselImages = document.querySelectorAll('.carousel-slide img');
-        
-        let counter = 0;
-        const size = carouselImages[0].clientWidth;
-
-        function slide() {
-            counter++;
-            if (counter === carouselImages.length) {
-                counter = 0;
-            }
-            carouselSlide.style.transform = `translateX(${-size * counter}px)`;
-        }
-
-        setInterval(slide, 3000);
-    </script>
-
-</body>
-</html>
-
-    <div class="horizontal-container">
-        <div class="my-carousel-wrapper">
-            <div class="carousel-container">
-                <div class="carousel-overlay">
-                    Satiate Promotional materials (print designs, Photoshoots and posts)
-                </div>
-                <div class="carousel-slide">
-                    <img src="Satiate/1.jpg" alt="Image of food">
-                    <img src="Satiate/Ramen Bowl 3.jpg" alt="Image of a ramen bowl">
-                    <img src="Satiate/5.jpg" alt="Image of food">
-                    <img src="Satiate/8.jpg" alt="Image of food">
-                    <img src="Satiate/Ramen Bowl 6.jpg" alt="Image of a ramen bowl">
-                    <img src="Satiate/7.jpg" alt="Image of food">
-                </div>
-            </div>
-        </div>
-
-        <div class="video-section">
-            <h2>Video Menu for Prospects</h2>
+            <div class="video-overlay-text">Video Menu</div>
             <video controls>
                 <source src="Satiate/Satiate video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -694,6 +691,7 @@
     </script>
 </body>
 </html>
+
 
 
 
