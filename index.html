@@ -130,7 +130,7 @@
         .horizontal-container {
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center; /* Corrected alignment */
             gap: 20px;
             padding: 50px;
         }
@@ -147,6 +147,7 @@
             border: none;
             overflow: hidden;
             position: relative;
+            border-radius: 20px; /* Added rounded edges */
         }
         
         /* New CSS for the darkening overlay */
@@ -157,10 +158,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-            opacity: 0; /* Hidden by default */
-            transition: opacity 0.3s ease; /* Smooth transition */
-            z-index: 5; /* Place it below the text overlay */
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 5;
         }
         
         /* The darkening effect and text appear on hover */
@@ -203,9 +204,10 @@
             width: 100%;
             height: 400px;
             object-fit: cover;
+            border-radius: 20px; /* Added rounded edges */
         }
 
-        /* CSS for the Text Overlay and Hover Effect */
+        /* CSS for the Text Overlay */
         .carousel-overlay {
             position: absolute;
             top: 50%;
@@ -226,6 +228,53 @@
     </style>
 </head>
 <body>
+
+    <div class="horizontal-container">
+        <div class="my-carousel-wrapper">
+            <div class="carousel-container">
+                <div class="carousel-overlay">
+                    Satiate Promotional materials (print designs, Photoshoots and posts)
+                </div>
+                <div class="carousel-slide">
+                    <img src="Satiate/1.jpg" alt="Image of food">
+                    <img src="Satiate/Ramen Bowl 3.jpg" alt="Image of a ramen bowl">
+                    <img src="Satiate/5.jpg" alt="Image of food">
+                    <img src="Satiate/8.jpg" alt="Image of food">
+                    <img src="Satiate/Ramen Bowl 6.jpg" alt="Image of a ramen bowl">
+                    <img src="Satiate/7.jpg" alt="Image of food">
+                </div>
+            </div>
+        </div>
+
+        <div class="video-section">
+            <h2>Video Menu for Prospects</h2>
+            <video controls>
+                <source src="Satiate/Satiate video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        const carouselSlide = document.querySelector('.carousel-slide');
+        const carouselImages = document.querySelectorAll('.carousel-slide img');
+        
+        let counter = 0;
+        const size = carouselImages[0].clientWidth;
+
+        function slide() {
+            counter++;
+            if (counter === carouselImages.length) {
+                counter = 0;
+            }
+            carouselSlide.style.transform = `translateX(${-size * counter}px)`;
+        }
+
+        setInterval(slide, 3000);
+    </script>
+
+</body>
+</html>
 
     <div class="horizontal-container">
         <div class="my-carousel-wrapper">
@@ -645,6 +694,7 @@
     </script>
 </body>
 </html>
+
 
 
 
