@@ -52,6 +52,145 @@
             position: relative;
             z-index: 1;
         }
+
+        /* --- Merged Carousel & Video Styles --- */
+        .horizontal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 50px;
+        }
+        
+        .my-carousel-wrapper {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .carousel-container {
+            width: 100%;
+            height: 400px;
+            border: none;
+            overflow: hidden;
+            position: relative;
+            border-radius: 20px;
+        }
+        
+        .carousel-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 5;
+        }
+        
+        .carousel-container:hover::before {
+            opacity: 1;
+        }
+
+        .carousel-container:hover .carousel-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .carousel-slide {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* --- THIS IS THE FIX --- */
+            flex-shrink: 0;
+        }
+
+        .video-section {
+            text-align: center;
+            max-width: 600px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+        
+        .video-section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .video-section video {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 5;
+            pointer-events: none;
+        }
+        
+        .video-section:hover::before {
+            opacity: 1;
+        }
+        
+        .video-overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            z-index: 10;
+            pointer-events: none;
+            width: 80%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .video-section:hover .video-overlay-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            z-index: 10;
+            pointer-events: none;
+            width: 80%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -108,7 +247,7 @@
                         To add the science to the art of customer engagement, I'm now pursuing a Master's in Digital and Data Marketing. Today, I swap chef's whites for data dashboards, using tools like Google Analytics, Power Bi, and Semrush to craft data-driven campaign strategies. My experience ranges from developing the go-to-market plan for a food-tech startup to executing A/B tests for social media campaigns in simulations. I thrive on connecting the dots between real-world human insight and digital performance.
                     </p>
                      <p class="text-gray-700 mb-6">
-                        In my free time, you can find me tuning in to catch the next football game or hiking up a trail or diving into the next videogame the internet is going crazy about. I'm excited to bring my creative energy and experience to your team. Let's build something amazing together! 
+                        In my free time, you can find me tuning in to catch the next football game or hiking up a trail or diving into the next videogame the internet is going crazy about. I'm excited to bring my creative energy and experience to your team. Let's build something amazing together!
                     </p>
                 </div>
             </div>
@@ -119,211 +258,37 @@
                 <div class="text-center mb-12">
                     <h2 class="section-title text-white inline-block bg-black/20 backdrop-blur-sm px-6 py-3 rounded-lg">Featured Projects</h2>
                 </div>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horizontal Layout</title>
-    <style>
-        /* New container for horizontal layout */
-        .horizontal-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            padding: 50px;
-        }
-        
-        /* Carousel Styles */
-        .my-carousel-wrapper {
-            max-width: 600px;
-            width: 100%;
-        }
 
-        .carousel-container {
-            width: 100%;
-            height: 400px;
-            border: none;
-            overflow: hidden;
-            position: relative;
-            border-radius: 20px;
-        }
-        
-        /* CSS for the carousel overlay */
-        .carousel-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 5;
-        }
-        
-        .carousel-container:hover::before {
-            opacity: 1;
-        }
+                <div class="horizontal-container">
+                    <div class="my-carousel-wrapper">
+                        <div class="carousel-container">
+                            <div class="carousel-overlay">
+                                Satiate Promotional materials (print designs, Photoshoots and posts)
+                            </div>
+                            <div class="carousel-slide">
+                                 <img src="Satiate/post 10.png" alt="Image of food">
+                                <img src="Satiate/post2.png" alt="Image of food">
+                                <img src="Satiate/post7.png" alt="Image of food">
+                                <img src="Satiate/1.jpg" alt="Image of food">
+                                <img src="Satiate/5.jpg" alt="Image of food">
+                                <img src="Satiate/8.jpg" alt="Image of food">
+                                <img src="Satiate/post 5.png" alt="Image of a ramen bowl">
+                                <img src="Satiate/satiate Menu-3-1.png" alt="Image of food">
+                                <img src="Satiate/satiate Menu-4-1.png" alt="Image of food">
+                            </div>
+                        </div>
+                    </div>
 
-        .carousel-container:hover .carousel-overlay {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .carousel-slide {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            flex-shrink: 0;
-        }
-
-        /* Video Section Styles */
-        .video-section {
-            text-align: center;
-            max-width: 600px;
-            position: relative; /* Crucial for overlay positioning */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden; /* Ensures rounded edges are applied */
-            border-radius: 20px;
-        }
-        
-        .video-section:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .video-section video {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* CSS for the Video Overlay */
-        .video-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 5;
-            pointer-events: none;
-        }
-        
-        .video-section:hover::before {
-            opacity: 1;
-        }
-        
-        .video-overlay-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            text-align: center;
-            font-size: 2em;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            z-index: 10;
-            pointer-events: none;
-            width: 80%;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        
-        .video-section:hover .video-overlay-text {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* CSS for the Carousel Text Overlay */
-        .carousel-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            text-align: center;
-            font-size: 2em;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            z-index: 10;
-            pointer-events: none;
-            width: 80%;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="horizontal-container">
-        <div class="my-carousel-wrapper">
-            <div class="carousel-container">
-                <div class="carousel-overlay">
-                    Satiate Promotional materials (print designs, Photoshoots and posts)
+                    <div class="video-section">
+                        <div class="video-overlay-text">Satiate Promotional Video menu</div>
+                        <video controls>
+                            <source src="Satiate/Satiate video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 </div>
-                <div class="carousel-slide">
-                     <img src="Satiate/post 10.png" alt="Image of food">
-                    <img src="Satiate/post2.png" alt="Image of food">
-                    <img src="Satiate/post7.png" alt="Image of food">
-                    <img src="Satiate/1.jpg" alt="Image of food">
-                    <img src="Satiate/5.jpg" alt="Image of food">
-                    <img src="Satiate/8.jpg" alt="Image of food">
-                    <img src="Satiate/post 5.png" alt="Image of a ramen bowl">
-                    <img src="Satiate/satiate Menu-3-1.png" alt="Image of food">
-                 <img src="Satiate/satiate Menu-4-1.png" alt="Image of food">
-                </div>
-            </div>
-        </div>
-
-        <div class="video-section">
-            <div class="video-overlay-text">Satiate Promotional Video menu</div>
-            <video controls>
-                <source src="Satiate/Satiate video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-
-    <script>
-        const carouselSlide = document.querySelector('.carousel-slide');
-        const carouselImages = document.querySelectorAll('.carousel-slide img');
-        
-        let counter = 0;
-        const size = carouselImages[0].clientWidth;
-
-        function slide() {
-            counter++;
-            if (counter === carouselImages.length) {
-                counter = 0;
-            }
-            carouselSlide.style.transform = `translateX(${-size * counter}px)`;
-        }
-
-        setInterval(slide, 3000);
-    </script>
-
-</body>
-</html>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                 
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mt-12">
                     <div class="group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg shadow-lg overflow-hidden">
                         <a href="https://www.canva.com/design/DAGskiriLr8/wkmiWaadiryaktt8J4Za7g/view?utm_content=DAGskiriLr8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h45a0a2c515" target="_blank" rel="noopener noreferrer">
                             <div class="relative">
@@ -482,7 +447,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -516,8 +480,7 @@
                         <div>
                             <h3 class="text-lg font-semibold mb-3">Digital Tools</h3>
                             <ul class="space-y-2 text-gray-600">
-                                <li>Platforms(Facebook,Instagram,
-                                    Linkdin , Tiktok)</li>
+                                <li>Platforms(Facebook,Instagram, Linkdin , Tiktok)</li>
                                 <li>Video Editing (Capcut, Filmora)</li>
                                 <li>Mailchimp,Hootsuite, Zapier</li>
                                 <li>Figma, Canva, Adobe cloud Basics, MS office </li>
@@ -550,11 +513,11 @@
                             <h3 class="text-xl font-bold">Marketing Intern</h3>
                             <p class="font-semibold text-gray-700">SATIATE, Mumbai</p>
                             <ul class="mt-2 text-gray-600">
-<li>- Contributed to the go-to-market strategy for a new meal subscription service, collaborating on the development of 20+ marketing materials and tracking customer feedback to provide actionable insights.</li>
-<li>-Took part in client acquisition efforts, identifying and reaching out to over 150 prospective corporate customers via LinkedIn Sales Navigator and Mailchimp.</li>
-<li>- Provided weekly performance reports on customer feedback, identifying 3 core reasons for user churn and leading to a 10% increase in subscriber retention by proposing data-driven product improvements.</li>
-<li>- Supported across all marketing functions, gaining foundational experience in campaign development, market research, and brand strategy in a dynamic startup environment. </li>
-</ul>
+                                <li>- Contributed to the go-to-market strategy for a new meal subscription service, collaborating on the development of 20+ marketing materials and tracking customer feedback to provide actionable insights.</li>
+                                <li>-Took part in client acquisition efforts, identifying and reaching out to over 150 prospective corporate customers via LinkedIn Sales Navigator and Mailchimp.</li>
+                                <li>- Provided weekly performance reports on customer feedback, identifying 3 core reasons for user churn and leading to a 10% increase in subscriber retention by proposing data-driven product improvements.</li>
+                                <li>- Supported across all marketing functions, gaining foundational experience in campaign development, market research, and brand strategy in a dynamic startup environment.</li>
+                            </ul>
                         </div>
                         <div class="relative">
                             <div class="absolute -left-11 top-1 w-6 h-6 bg-blue-600 rounded-full border-4 border-white"></div>
@@ -562,11 +525,11 @@
                             <h3 class="text-xl font-bold">Kitchen Head</h3>
                             <p class="font-semibold text-gray-700">ANAMIVA by AM Kollection, Goa</p>
                             <ul class="mt-2 text-gray-600">
-    <li>- Successfully participated in the end-to-end launch of a new menu, a key project completed in 3 months that required cross-functional collaboration with 5+ internal teams and external vendors, resulting in a 15% increase in post-launch customer engagement.</li>
-    <li>- Coordinated with stakeholders to plan and execute 5 on-site promotional events over a 6-month period, which directly contributed to a 20% increase in sales and enhanced brand visibility with the target audience.</li>
-    <li>-Identified 3 key consumer drivers through market analysis and provided actionable feedback that led to the adjustment of the product offering, directly aligning with business development objectives to grow the customer base in a new market segment.</li>
-    <li>- Supported the presentation of new promotional strategies and brand development concepts to stakeholders, utilizing client insights to inform team efforts.</li>
-</ul>
+                                <li>- Successfully participated in the end-to-end launch of a new menu, a key project completed in 3 months that required cross-functional collaboration with 5+ internal teams and external vendors, resulting in a 15% increase in post-launch customer engagement.</li>
+                                <li>- Coordinated with stakeholders to plan and execute 5 on-site promotional events over a 6-month period, which directly contributed to a 20% increase in sales and enhanced brand visibility with the target audience.</li>
+                                <li>-Identified 3 key consumer drivers through market analysis and provided actionable feedback that led to the adjustment of the product offering, directly aligning with business development objectives to grow the customer base in a new market segment.</li>
+                                <li>- Supported the presentation of new promotional strategies and brand development concepts to stakeholders, utilizing client insights to inform team efforts.</li>
+                            </ul>
                         </div>
                         <div class="relative">
                             <div class="absolute -left-11 top-1 w-6 h-6 bg-blue-600 rounded-full border-4 border-white"></div>
@@ -574,40 +537,40 @@
                             <h3 class="text-xl font-bold">Commis Chef</h3>
                             <p class="font-semibold text-gray-700">MEGU - The Leela Palace, New Delhi</p>
                             <ul class="mt-2 text-gray-600">
-    <li>- Contributed to upholding a brand's reputation for excellence by ensuring high standards of quality and consistency in product delivery.</li>
-    <li>- Assisted in resolving operational challenges in real-time to enhance the premium brand experience for guests.</li>
-    <li>- Collaborated with the culinary team to execute daily service operations, applying rigorous attention to detail to optimize guest experience.</li>
-    <li>- Supported the maintenance of consistent service excellence, even during high-volume periods in a luxury setting.</li>
-</ul>
+                                <li>- Contributed to upholding a brand's reputation for excellence by ensuring high standards of quality and consistency in product delivery.</li>
+                                <li>- Assisted in resolving operational challenges in real-time to enhance the premium brand experience for guests.</li>
+                                <li>- Collaborated with the culinary team to execute daily service operations, applying rigorous attention to detail to optimize guest experience.</li>
+                                <li>- Supported the maintenance of consistent service excellence, even during high-volume periods in a luxury setting.</li>
+                            </ul>
                         </div>
-                        <div class="relative">
+                         <div class="relative">
                             <div class="absolute -left-11 top-1 w-6 h-6 bg-blue-600 rounded-full border-4 border-white"></div>
                             <p class="text-sm text-gray-500">Sept 2021 - Jan 2022</p>
                             <h3 class="text-xl font-bold">Food Production & Marketing Intern</h3>
                             <p class="font-semibold text-gray-700">Taj Mahal Palace and Towers, Mumbai</p>
                             <ul class="mt-2 text-gray-600">
-    <li>- Actively contributed to team efficiency by participating in brainstorming sessions and assisting with meeting organization.</li>
-    <li>- Analyzed 1,500+ real-time guest feedback forms and reviews, identifying 5 key drivers of customer loyalty that informed the hotel's new guest retention strategy.</li>
-    <li>- Provided weekly data reports on customer preferences, leading to a 10% increase in positive online reviews and a 5% increase in guest satisfaction scores.</li>
-    <li>- Identified key drivers of customer dissatisfaction, providing insights that informed customer retention and lifecycle marketing strategies.</li>
-    <li>- Assisted in the coordination and execution of various seasonal events, gaining experience in enhancing the customer journey through curated brand experiences.</li>
-</ul>
-                        </div>
+                                <li>- Actively contributed to team efficiency by participating in brainstorming sessions and assisting with meeting organization.</li>
+                                <li>- Analyzed 1,500+ real-time guest feedback forms and reviews, identifying 5 key drivers of customer loyalty that informed the hotel's new guest retention strategy.</li>
+                                <li>- Provided weekly data reports on customer preferences, leading to a 10% increase in positive online reviews and a 5% increase in guest satisfaction scores.</li>
+                                <li>- Identified key drivers of customer dissatisfaction, providing insights that informed customer retention and lifecycle marketing strategies.</li>
+                                <li>- Assisted in the coordination and execution of various seasonal events, gaining experience in enhancing the customer journey through curated brand experiences.</li>
+                            </ul>
+                         </div>
                          <div class="relative">
                             <div class="absolute -left-11 top-1 w-6 h-6 bg-blue-600 rounded-full border-4 border-white"></div>
                             <p class="text-sm text-gray-500">May 2019 - July 2019</p>
                             <h3 class="text-xl font-bold">Vocational Industrial trainee</h3>
                             <p class="font-semibold text-gray-700">The leela Palace, Bangalore</p>
                             <ul class="mt-2 text-gray-600">
-                                    <li>- Gained a holistic understanding of luxury hotel operations through departmental rotations, providing insights into various aspects of the guest journey.</li>
-    <li>- Collaborated with teams to analyze operational processes, identifying opportunities for growth and contributing to service personalization initiatives.</li>
-    <li>- Provided analysis and suggestions that supported the implementation of process improvements, tangibly enhancing the guest experience.</li>
-    <li>- Developed a deep understanding of customer segmentation and cross-departmental initiatives to enhance service delivery and guest engagement.</li>
-</ul>
+                                <li>- Gained a holistic understanding of luxury hotel operations through departmental rotations, providing insights into various aspects of the guest journey.</li>
+                                <li>- Collaborated with teams to analyze operational processes, identifying opportunities for growth and contributing to service personalization initiatives.</li>
+                                <li>- Provided analysis and suggestions that supported the implementation of process improvements, tangibly enhancing the guest experience.</li>
+                                <li>- Developed a deep understanding of customer segmentation and cross-departmental initiatives to enhance service delivery and guest engagement.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
+             </div>
         </section>
 
         <section id="certifications" class="py-20">
@@ -648,6 +611,7 @@
     </footer>
 
     <script>
+        // Main script for mobile menu and active nav link highlighting
         document.addEventListener('DOMContentLoaded', () => {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -668,14 +632,14 @@
             const headerHeight = document.querySelector('header').offsetHeight;
 
             const makeActive = (id) => {
-                 navLinks.forEach(link => {
+                navLinks.forEach(link => {
                     link.classList.remove('active');
                     if (link.getAttribute('href') === `#${id}`) {
                         link.classList.add('active');
                     }
                 });
             };
-            
+
             window.addEventListener('scroll', () => {
                 const scrollPosition = window.scrollY;
                 let currentSectionId = '';
@@ -686,10 +650,28 @@
                         currentSectionId = section.id;
                     }
                 });
-
                 makeActive(currentSectionId);
             });
         });
+    </script>
+    <script>
+        // Script for the image carousel
+        const carouselSlide = document.querySelector('.carousel-slide');
+        const carouselImages = document.querySelectorAll('.carousel-slide img');
+        
+        if (carouselImages.length > 0) {
+            let counter = 0;
+            const size = carouselImages[0].clientWidth;
+            
+            function slide() {
+                counter++;
+                if (counter >= carouselImages.length) {
+                    counter = 0;
+                }
+                carouselSlide.style.transform = `translateX(${-size * counter}px)`;
+            }
+            setInterval(slide, 3000);
+        }
     </script>
 </body>
 </html>
