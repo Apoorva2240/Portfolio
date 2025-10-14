@@ -10,9 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2563eb; /* Blue-600 */
-            --secondary-color: #4b5563; /* Gray-600 */
-            --background-color: #f9fafb; /* Gray-50 */
+            --primary-color: #2563eb;
+ /* Blue-600 */
+            --secondary-color: #4b5563;
+ /* Gray-600 */
+            --background-color: #f9fafb;
+ /* Gray-50 */
             --card-background: #ffffff;
         }
         html {
@@ -24,8 +27,10 @@
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
-            color: #1f2937; /* Gray-800 */
-            user-select: none; /* Prevents text selection and the I-beam cursor */
+            color: #1f2937;
+ /* Gray-800 */
+            user-select: none;
+ /* Prevents text selection and the I-beam cursor */
         }
         .section-title {
             @apply text-4xl font-bold text-center mb-12;
@@ -108,7 +113,7 @@
                         To add the science to the art of customer engagement, I'm now pursuing a Master's in Digital and Data Marketing. Today, I swap chef's whites for data dashboards, using tools like Google Analytics, Power Bi, and Semrush to craft data-driven campaign strategies. My experience ranges from developing the go-to-market plan for a food-tech startup to executing A/B tests for social media campaigns in simulations. I thrive on connecting the dots between real-world human insight and digital performance.
                     </p>
                      <p class="text-gray-700 mb-6">
-                        In my free time, you can find me tuning in to catch the next football game or hiking up a trail or diving into the next videogame the internet is going crazy about. I'm excited to bring my creative energy and experience to your team. Let's build something amazing together! 
+                        In my free time, you can find me tuning in to catch the next football game or hiking up a trail or diving into the next videogame the internet is going crazy about. I'm excited to bring my creative energy and experience to your team. Let's build something amazing together!
                     </p>
                 </div>
             </div>
@@ -117,7 +122,8 @@
         <section id="projects" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="section-title text-white inline-block bg-black/20 backdrop-blur-sm px-6 py-3 rounded-lg">Featured Projects</h2>
+                    <h2 
+ class="section-title text-white inline-block bg-black/20 backdrop-blur-sm px-6 py-3 rounded-lg">Featured Projects</h2>
                 </div>
 <!DOCTYPE html>
 <html lang="en">
@@ -129,7 +135,7 @@
         /* New container for horizontal layout */
         .horizontal-container {
             display: flex;
-            justify-content: center;
+ justify-content: center;
             align-items: center;
             gap: 20px;
             padding: 50px;
@@ -138,51 +144,51 @@
         /* Carousel Styles */
         .my-carousel-wrapper {
             max-width: 600px;
-            width: 100%;
+ width: 100%;
         }
 
         .carousel-container {
             width: 100%;
-            height: 400px;
+ height: 400px;
             border: none;
             overflow: hidden;
             position: relative;
             border-radius: 20px;
-        }
+ }
         
         /* CSS for the carousel overlay */
         .carousel-container::before {
             content: '';
-            position: absolute;
+ position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
             opacity: 0;
-            transition: opacity 0.3s ease;
+ transition: opacity 0.3s ease;
             z-index: 5;
         }
         
         .carousel-container:hover::before {
             opacity: 1;
-        }
+ }
 
         .carousel-container:hover .carousel-overlay {
             opacity: 1;
-            visibility: visible;
+ visibility: visible;
         }
 
         .carousel-slide {
             display: flex;
-            width: 100%;
+ width: 100%;
             height: 100%;
             transition: transform 0.5s ease-in-out;
         }
 
         .carousel-slide img {
             width: 100%;
-            height: 100%;
+ height: 100%;
             object-fit: contain;
             flex-shrink: 0;
         }
@@ -190,21 +196,21 @@
         /* Video Section Styles */
         .video-section {
             text-align: center;
-            max-width: 600px;
+ max-width: 600px;
             position: relative; /* Crucial for overlay positioning */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden; /* Ensures rounded edges are applied */
+ overflow: hidden; /* Ensures rounded edges are applied */
             border-radius: 20px;
-        }
+ }
         
         .video-section:hover {
             transform: scale(1.02);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+ box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         .video-section video {
             width: 100%;
-            height: 400px;
+ height: 400px;
             object-fit: cover;
             display: block;
         }
@@ -212,62 +218,62 @@
         /* CSS for the Video Overlay */
         .video-section::before {
             content: '';
-            position: absolute;
+ position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
             opacity: 0;
-            transition: opacity 0.3s ease;
+ transition: opacity 0.3s ease;
             z-index: 5;
             pointer-events: none;
         }
         
         .video-section:hover::before {
             opacity: 1;
-        }
+ }
         
         .video-overlay-text {
             position: absolute;
-            top: 50%;
+ top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: white;
             text-align: center;
             font-size: 2em;
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             z-index: 10;
             pointer-events: none;
             width: 80%;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
+ transition: opacity 0.3s ease, visibility 0.3s ease;
         }
         
         .video-section:hover .video-overlay-text {
             opacity: 1;
-            visibility: visible;
+ visibility: visible;
         }
 
         /* CSS for the Carousel Text Overlay */
         .carousel-overlay {
             position: absolute;
-            top: 50%;
+ top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: white;
             text-align: center;
             font-size: 2em;
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             z-index: 10;
             pointer-events: none;
             width: 80%;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
+ transition: opacity 0.3s ease, visibility 0.3s ease;
         }
     </style>
 </head>
@@ -279,15 +285,18 @@
                 <div class="carousel-overlay">
                     Satiate Promotional materials (print designs, Photoshoots and posts)
                 </div>
-                <div class="carousel-slide">
+  
+               <div class="carousel-slide">
                      <img src="Satiate/Post 5.png" alt="Image of a ramen bowl">
                      <img src="Satiate/post 10.png" alt="Image of food">
                     <img src="Satiate/post2.png" alt="Image of food">
-                    <img src="Satiate/post7.png" alt="Image of food">
+       
+              <img src="Satiate/post7.png" alt="Image of food">
                     <img src="Satiate/1.jpg" alt="Image of food">
                     <img src="Satiate/5.jpg" alt="Image of food">
                     <img src="Satiate/8.jpg" alt="Image of food">
-                    <img src="Satiate/satiate Menu-3-1.png" alt="Image of food">
+           
+          <img src="Satiate/satiate Menu-3-1.png" alt="Image of food">
                  <img src="Satiate/satiate Menu-4-1.png" alt="Image of food">
                 </div>
             </div>
@@ -295,30 +304,33 @@
 
         <div class="video-section">
             <div class="video-overlay-text">Satiate Promotional Videos</div>
-            <video controls>
+    
+         <video controls>
                 <source src="Satiate/Satiate Video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
-            </video>
+ </video>
+            <a href="https://drive.google.com/drive/folders/1RmvIBdx99Y1OpwDcNnwDcKc83F9pVilV?usp=sharing" target="_blank" rel="noopener noreferrer" class="block text-center text-blue-300 hover:text-blue-500 underline mt-4 text-sm font-semibold transition-colors duration-200">
+                More videos here
+            </a>
         </div>
     </div>
 
     <script>
         const carouselSlide = document.querySelector('.carousel-slide');
-        const carouselImages = document.querySelectorAll('.carousel-slide img');
+ const carouselImages = document.querySelectorAll('.carousel-slide img');
         
         let counter = 0;
         const size = carouselImages[0].clientWidth;
-
-        function slide() {
+ function slide() {
             counter++;
-            if (counter === carouselImages.length) {
+ if (counter === carouselImages.length) {
                 counter = 0;
-            }
+ }
             carouselSlide.style.transform = `translateX(${-size * counter}px)`;
-        }
+ }
 
         setInterval(slide, 3000);
-    </script>
+ </script>
 
 </body>
 </html>
@@ -326,304 +338,395 @@
                  
                     <div class="group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg shadow-lg overflow-hidden">
                         <a href="https://www.canva.com/design/DAGskiriLr8/wkmiWaadiryaktt8J4Za7g/view?utm_content=DAGskiriLr8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h45a0a2c515" target="_blank" rel="noopener noreferrer">
-                            <div class="relative">
+    
+                         <div class="relative">
                                 <img src="images/Project1.png" alt="Digital Marketing Simternship Dashboard" class="w-full h-48 object-cover">
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                <div class="absolute inset-0 
+ bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                                     <div class="text-center text-white p-4">
                                         <div class="mb-2"><p class="text-3xl font-bold">$166K+</p><p class="text-xs uppercase tracking-wider">Profit Generated</p></div>
-                                        <div class="mb-2"><p class="text-3xl font-bold">2.39</p><p class="text-xs uppercase tracking-wider">Return on Ad Spend</p></div>
+     
+                                    <div class="mb-2"><p class="text-3xl font-bold">2.39</p><p class="text-xs uppercase tracking-wider">Return on Ad Spend</p></div>
                                         <div><p class="text-3xl font-bold">4,971</p><p class="text-xs uppercase tracking-wider">Total Conversions</p></div>
-                                    </div>
+          
+                           </div>
                                 </div>
                             </div>
-                        </a>
+              
+           </a>
                         <div class="p-6 bg-black/40 backdrop-blur-sm">
                             <h3 class="text-xl font-bold mb-2 text-white">
-                                <a href="https://www.canva.com/design/DAGskiriLr8/wkmiWaadiryaktt8J4Za7g/view?utm_content=DAGskiriLr8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h45a0a2c515" target="_blank" rel="noopener noreferrer" class="hover:underline">
+                               
+  <a href="https://www.canva.com/design/DAGskiriLr8/wkmiWaadiryaktt8J4Za7g/view?utm_content=DAGskiriLr8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h45a0a2c515" target="_blank" rel="noopener noreferrer" class="hover:underline">
                                     Digital Marketing Simternship®
                                 </a>
-                            </h3>
+                        
+     </h3>
                             <p class="text-gray-200 mb-4 text-sm">Executed a comprehensive digital marketing strategy for a new e-commerce brand, managing a scaling budget across Search, Display, and Shopping ads to maximize profitability and ROAS.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag">SEO/SEM</span><span class="skill-tag">PPC</span><span class="skill-tag">Budget Management</span>
+         
+                        <span class="skill-tag">SEO/SEM</span><span class="skill-tag">PPC</span><span class="skill-tag">Budget Management</span>
                             </div>
                         </div>
                     </div>
 
+ 
                     <div class="group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg shadow-lg overflow-hidden">
                         <a href="https://www.canva.com/design/DAGsky-mc0M/650QuBfgNT26gEcbNZaQIg/edit?utm_content=DAGsky-mc0M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer">
                             <div class="relative">
-                                <img src="images/Project2.png" alt="Social Media Simternship Dashboard" class="w-full h-48 object-cover">
+                
+                 <img src="images/Project2.png" alt="Social Media Simternship Dashboard" class="w-full h-48 object-cover">
                                 <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                                    <div class="text-center text-white p-4">
+                                
+     <div class="text-center text-white p-4">
                                         <div class="mb-2"><p class="text-3xl font-bold">$66K+</p><p class="text-xs uppercase tracking-wider">Revenue (Instagram)</p></div>
-                                        <div class="mb-2"><p class="text-3xl font-bold">3.64x</p><p class="text-xs uppercase tracking-wider">Influencer ROAS</p></div>
+                                        <div class="mb-2"><p class="text-3xl font-bold">3.64x</p><p class="text-xs uppercase 
+ tracking-wider">Influencer ROAS</p></div>
                                         <div><p class="text-3xl font-bold">80K+</p><p class="text-xs uppercase tracking-wider">Total Engagements</p></div>
                                     </div>
-                                </div>
+                 
+                </div>
                             </div>
                         </a>
                         <div class="p-6 bg-black/40 backdrop-blur-sm">
-                            <h3 class="text-xl font-bold mb-2 text-white">
+      
+                       <h3 class="text-xl font-bold mb-2 text-white">
                                 <a href="https://www.canva.com/design/DAGsky-mc0M/650QuBfgNT26gEcbNZaQIg/edit?utm_content=DAGsky-mc0M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="hover:underline">
-                                    Social Media Simternship®
+                                    Social 
+ Media Simternship®
                                 </a>
                             </h3>
-                            <p class="text-gray-200 mb-4 text-sm">Developed a social media launch strategy, using audience analysis and performance data to select platforms, manage influencer campaigns, and drive revenue with a high ROI.</p>
+                            <p class="text-gray-200 mb-4 text-sm">Developed a social media launch strategy, using audience 
+ analysis and performance data to select platforms, manage influencer campaigns, and drive revenue with a high ROI.</p>
                             <div class="flex flex-wrap gap-2">
                                 <span class="skill-tag">Social Media</span><span class="skill-tag">Influencer Marketing</span><span class="skill-tag">Data Analysis</span>
-                            </div>
+               
+              </div>
                         </div>
                     </div>
 
                     <div class="group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg shadow-lg overflow-hidden">
-                        <a href="https://www.canva.com/design/DAGsktSapKc/O89xGRqvfr_-QEpF6E5mdQ/view?utm_content=DAGsktSapKc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4bb36ca9f6" target="_blank" rel="noopener noreferrer">
+               
+          <a href="https://www.canva.com/design/DAGsktSapKc/O89xGRqvfr_-QEpF6E5mdQ/view?utm_content=DAGsktSapKc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4bb36ca9f6" target="_blank" rel="noopener noreferrer">
                             <div class="relative">
                                 <img src="images/Project3.png" alt="Teaology Presentation Slide" class="w-full h-48 object-cover">
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                   
+              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                                     <div class="text-center text-white p-4">
-                                        <div class="mb-2"><p class="text-3xl font-bold">$2.8B</p><p class="text-xs uppercase tracking-wider">Market Forecast (2030)</p></div>
+                                    
+     <div class="mb-2"><p class="text-3xl font-bold">$2.8B</p><p class="text-xs uppercase tracking-wider">Market Forecast (2030)</p></div>
                                         <div class="mb-2"><p class="text-3xl font-bold">$14M</p><p class="text-xs uppercase tracking-wider">Revenue Opportunity</p></div>
-                                        <div><p class="text-3xl font-bold">0.5%</p><p class="text-xs uppercase tracking-wider">Target Market Share</p></div>
+                                        <div><p 
+ class="text-3xl font-bold">0.5%</p><p class="text-xs uppercase tracking-wider">Target Market Share</p></div>
                                     </div>
                                 </div>
-                            </div>
+                          
+   </div>
                         </a>
                         <div class="p-6 bg-black/40 backdrop-blur-sm">
                             <h3 class="text-xl font-bold mb-2 text-white">
-                                <a href="https://www.canva.com/design/DAGsktSapKc/O89xGRqvfr_-QEpF6E5mdQ/view?utm_content=DAGsktSapKc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4bb36ca9f6" target="_blank" rel="noopener noreferrer" class="hover:underline">
+               
+                  <a href="https://www.canva.com/design/DAGsktSapKc/O89xGRqvfr_-QEpF6E5mdQ/view?utm_content=DAGsktSapKc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4bb36ca9f6" target="_blank" rel="noopener noreferrer" class="hover:underline">
                                     Global Marketing Strategy: Teaology
                                 </a>
-                            </h3>
-                            <p class="text-gray-200 mb-4 text-sm">Conducted a market entry analysis for a skincare brand launching in Canada. Delivered a strategic plan including market sizing, competitor analysis, and localized growth initiatives.</p>
+       
+                           </h3>
+                            <p class="text-gray-200 mb-4 text-sm">Conducted a market entry analysis for a skincare brand launching in Canada.
+ Delivered a strategic plan including market sizing, competitor analysis, and localized growth initiatives.</p>
                             <div class="flex flex-wrap gap-2">
                                 <span class="skill-tag">Market Analysis</span><span class="skill-tag">Go-to-Market</span><span class="skill-tag">Forecasting</span>
-                            </div>
+                     
+        </div>
                         </div>
                     </div>
                     
                     <div class="group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg shadow-lg overflow-hidden">
+ 
                         <a href="https://www.canva.com/design/DAGcqMYMtvM/7sOsIqY4Pq8hkbooh4u2Ig/view?utm_content=DAGcqMYMtvM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3d2265ee11" target="_blank" rel="noopener noreferrer">
                             <div class="relative">
                                 <img src="images/Project4.png" alt="Closetaway App Mockup" class="w-full h-48 object-cover">
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+     
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                                     <div class="text-center text-white p-4">
-                                        <p class="text-2xl font-bold">Figma Prototype</p>
+                      
+                   <p class="text-2xl font-bold">Figma Prototype</p>
                                         <p class="text-sm uppercase tracking-wider mb-2">Complete UX/UI</p>
-                                        <p class="text-2xl font-bold">User-Centric</p>
+                                  
+       <p class="text-2xl font-bold">User-Centric</p>
                                         <p class="text-sm uppercase tracking-wider">Design</p>
                                     </div>
-                                </div>
+             
+                    </div>
                             </div>
                         </a>
                         <div class="p-6 bg-black/40 backdrop-blur-sm">
-                            <h3 class="text-xl font-bold mb-2 text-white">
+  
+                           <h3 class="text-xl font-bold mb-2 text-white">
                                 <a href="https://www.canva.com/design/DAGcqMYMtvM/7sOsIqY4Pq8hkbooh4u2Ig/view?utm_content=DAGcqMYMtvM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3d2265ee11" target="_blank" rel="noopener noreferrer" class="hover:underline">
-                                    Closetaway - App Concept & UX/UI
+                                 
+    Closetaway - App Concept & UX/UI
                                 </a>
                             </h3>
-                            <p class="text-gray-200 mb-4 text-sm">Led the end-to-end design process for a new travel app concept. The project focused on translating an initial idea into a tangible user experience, starting with brainstorming and user persona development, then creating low-fidelity wireframes and high-fidelity mockups in Figma.</p>
+                            <p class="text-gray-200 mb-4 text-sm">Led 
+ the end-to-end design process for a new travel app concept.
+ The project focused on translating an initial idea into a tangible user experience, starting with brainstorming and user persona development, then creating low-fidelity wireframes and high-fidelity mockups in Figma.</p>
                             <div class="flex flex-wrap gap-2">
                                 <span class="skill-tag">UX/UI Design</span><span class="skill-tag">Figma</span><span class="skill-tag">Prototyping</span><span class="skill-tag">User Research</span>
-                            </div>
+   
+                          </div>
                         </div>
                     </div>
 
                     <div class="group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg shadow-lg overflow-hidden">
-                        <a href="https://www.canva.com/design/DAGtOb6JfWk/YB3JZ59K0zZiN2DxIqvFiA/view?utm_content=DAGtOb6JfWk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h09fb06a9df" target="_blank" rel="noopener noreferrer">
+   
+                      <a href="https://www.canva.com/design/DAGtOb6JfWk/YB3JZ59K0zZiN2DxIqvFiA/view?utm_content=DAGtOb6JfWk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h09fb06a9df" target="_blank" rel="noopener noreferrer">
                             <div class="relative">
                                 <img src="images/Project5.png" alt="Les Secrets de Loly Campaign Moodboard" class="w-full h-48 object-cover">
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+    
+                             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                                     <div class="text-center text-white p-4">
-                                        <p class="text-2xl font-bold">Community-Focused</p>
+                     
+                    <p class="text-2xl font-bold">Community-Focused</p>
                                         <p class="text-sm uppercase tracking-wider mb-2">Strategy</p>
-                                        <p class="text-2xl font-bold">Data-Driven</p>
+                                   
+      <p class="text-2xl font-bold">Data-Driven</p>
                                         <p class="text-sm uppercase tracking-wider">Influencer Selection</p>
                                     </div>
-                                </div>
+             
+                    </div>
                             </div>
                         </a>
                         <div class="p-6 bg-black/40 backdrop-blur-sm">
-                            <h3 class="text-xl font-bold mb-2 text-white">
+  
+                           <h3 class="text-xl font-bold mb-2 text-white">
                                 <a href="https://www.canva.com/design/DAGtOb6JfWk/YB3JZ59K0zZiN2DxIqvFiA/view?utm_content=DAGtOb6JfWk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h09fb06a9df" target="_blank" rel="noopener noreferrer" class="hover:underline">
-                                    Influencer Marketing Strategy: Les Secrets de Loly
+                                 
+    Influencer Marketing Strategy: Les Secrets de Loly
                                 </a>
                             </h3>
-                            <p class="text-gray-200 mb-4 text-sm">Analyzed an existing influencer campaign, identified key problems, and developed a new, data-driven strategy to reconnect with the brand's core community through authentic content and diversified influencer partnerships.</p>
+                            <p class="text-gray-200 mb-4 
+ text-sm">Analyzed an existing influencer campaign, identified key problems, and developed a new, data-driven strategy to reconnect with the brand's core community through authentic content and diversified influencer partnerships.</p>
                             <div class="flex flex-wrap gap-2">
                                 <span class="skill-tag">Influencer Marketing</span><span class="skill-tag">Brand Strategy</span><span class="skill-tag">Community Management</span>
-                            </div>
+    
+                         </div>
                         </div>
                     </div>
 
                     <div class="group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg shadow-lg overflow-hidden">
-                        <a href="https://www.canva.com/design/DAGtO4-mshE/fCVir5hDBHhCd3swkNMqWQ/view?utm_content=DAGtO4-mshE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha00fed76a0" target="_blank" rel="noopener noreferrer">
+    
+                     <a href="https://www.canva.com/design/DAGtO4-mshE/fCVir5hDBHhCd3swkNMqWQ/view?utm_content=DAGtO4-mshE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha00fed76a0" target="_blank" rel="noopener noreferrer">
                             <div class="relative">
                                 <img src="images/Project6.png" alt="Petrobras Case Study Image" class="w-full h-48 object-cover">
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+       
+                          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                                     <div class="text-center text-white p-4">
-                                        <p class="text-2xl font-bold">In-Depth</p>
+                        
+                 <p class="text-2xl font-bold">In-Depth</p>
                                         <p class="text-sm uppercase tracking-wider mb-2">Ethical Analysis</p>
-                                        <p class="text-2xl font-bold">$120B+</p>
+                                     
+    <p class="text-2xl font-bold">$120B+</p>
                                         <p class="text-sm uppercase tracking-wider">Debt from Scandal</p>
                                     </div>
-                                </div>
+              
+                   </div>
                             </div>
                         </a>
                         <div class="p-6 bg-black/40 backdrop-blur-sm">
-                            <h3 class="text-xl font-bold mb-2 text-white">
+   
+                          <h3 class="text-xl font-bold mb-2 text-white">
                                 <a href="https://www.canva.com/design/DAGtO4-mshE/fCVir5hDBHhCd3swkNMqWQ/view?utm_content=DAGtO4-mshE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha00fed76a0" target="_blank" rel="noopener noreferrer" class="hover:underline">
-                                    Ethics & Sustainability Case Study: Petrobras
+                                  
+    Ethics & Sustainability Case Study: Petrobras
                                 </a>
                             </h3>
-                            <p class="text-gray-200 mb-4 text-sm">Conducted a deep-dive analysis of the "Lava Jato" corruption scandal. Evaluated the ethical failures, the company's response, and formulated key takeaways on corporate governance, transparency, and crisis management.</p>
+                            <p class="text-gray-200 mb-4 text-sm">Conducted a 
+ deep-dive analysis of the "Lava Jato" corruption scandal. Evaluated the ethical failures, the company's response, and formulated key takeaways on corporate governance, transparency, and crisis management.</p>
                             <div class="flex flex-wrap gap-2">
                                 <span class="skill-tag">Crisis Management</span><span class="skill-tag">Ethical Analysis</span><span class="skill-tag">Corporate Governance</span>
-                            </div>
+      
+                       </div>
                         </div>
                     </div>
 
                 </div>
             </div>
-        </section>
+      
+   </section>
 
         <section id="skills" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="max-w-6xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl">
                     <h2 class="section-title text-gray-800">Skills & Expertise</h2>
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+ 
                         <div>
                             <h3 class="text-lg font-semibold mb-3">Digital Marketing & Strategy</h3>
                             <ul class="space-y-2 text-gray-600">
-                                <li>Social Media (Stukent)</li>
+             
+                    <li>Social Media (Stukent)</li>
                                 <li>Content & Storytelling</li>
                                 <li>SEO/SEM (semRush, Google Search console)</li>
-                                <li>PPC Advertising</li>
+         
+                        <li>PPC Advertising</li>
                                 <li>CMS Basics (WordPress)</li>
                                 <li>CRM Basics (Hubspot)</li>
-                            </ul>
+        
+                     </ul>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold mb-3">Data & Analytics</h3>
+                            <h3 class="text-lg font-semibold mb-3">Data 
+ & Analytics</h3>
                             <ul class="space-y-2 text-gray-600">
                                 <li>Market Intelligence</li>
                                 <li>A/B Testing</li>
-                                <li>KPI Tracking & Reporting</li>
+   
+                              <li>KPI Tracking & Reporting</li>
                                 <li>Google Analytics</li>
-                                <li>Power Bi, SPSS, Excel</li>
+                                <li>Power Bi, SPSS, 
+ Excel</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold mb-3">Digital Tools</h3>
+                        
+     <h3 class="text-lg font-semibold mb-3">Digital Tools</h3>
                             <ul class="space-y-2 text-gray-600">
                                 <li>Platforms(Facebook,Instagram,
-                                    Linkdin , Tiktok)</li>
+                              
+       Linkdin , Tiktok)</li>
                                 <li>Video Editing (Capcut, Filmora)</li>
                                 <li>Mailchimp,Hootsuite, Zapier</li>
-                                <li>Figma, Canva, Adobe cloud Basics, MS office </li>
+                        
+         <li>Figma, Canva, Adobe cloud Basics, MS office </li>
                             </ul>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold mb-3">Business & Management</h3>
+         
+                    <h3 class="text-lg font-semibold mb-3">Business & Management</h3>
                             <ul class="space-y-2 text-gray-600">
                                 <li>Team Collaboration</li>
-                                <li>Marketing Management (Alison)</li>
+             
+                    <li>Marketing Management (Alison)</li>
                                 <li>Project Management(Notion)</li>
                                 <li>Stakeholder Management</li> 
-                                <li>Camera Function</li>
+            
+                     <li>Camera Function</li>
                                 <li>Event Planning & Execution</li>
                                 <li>Research Methods</li>
-                            </ul>
+           
+                  </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-       <section id="experience" class="py-20">
+   
+     <section id="experience" class="py-20">
     <div class="container mx-auto px-6">
         <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl">
             <h2 class="section-title text-gray-800">Professional Experience</h2>
             <div class="space-y-8 relative border-l-2 border-gray-200 pl-10">
                 <div class="relative">
-                    <div class="absolute -left-11 top-1 w-6 h-6 bg-blue-600 rounded-full border-4 border-white"></div>
+                    <div class="absolute -left-11 
+ top-1 w-6 h-6 bg-blue-600 rounded-full border-4 border-white"></div>
                     <p class="text-sm text-gray-500">Jan 2025 - Apr 2025</p>
                     <h3 class="text-xl font-bold">Marketing Intern</h3>
                     <p class="font-semibold text-gray-700">SATIATE, Mumbai</p>
-                    <ul class="mt-2 text-gray-600">
+                    <ul class="mt-2 
+ text-gray-600">
                         <li>- Contributed to the go-to-market strategy, creating 20+ marketing materials and providing actionable insights from customer feedback.</li>
                         <li>- Identified and reached out to over 150 prospective clients using LinkedIn Sales Navigator and Mailchimp.</li>
-                        <li>- Analyzed weekly customer feedback, identifying 3 core reasons for user churn, which led to a 10% increase in subscriber retention.</li>
+                     
+    <li>- Analyzed weekly customer feedback, identifying 3 core reasons for user churn, which led to a 10% increase in subscriber retention.</li>
                         <li>- Gained foundational experience in campaign development, market research, and brand strategy.</li>
                     </ul>
                 </div>
-                <div class="relative">
+      
+           <div class="relative">
                     <div class="absolute -left-11 top-1 w-6 h-6 bg-blue-600 rounded-full border-4 border-white"></div>
                     <p class="text-sm text-gray-500">Oct 2023 - May 2024</p>
                     <h3 class="text-xl font-bold">Kitchen Head</h3>
-                    <p class="font-semibold text-gray-700">ANAMIVA by AM Kollection, Goa</p>
+           
+          <p class="font-semibold text-gray-700">ANAMIVA by AM Kollection, Goa</p>
                     <ul class="mt-2 text-gray-600">
                         <li>- Led the launch of a new menu in 3 months, resulting in a 15% increase in post-launch customer engagement.</li>
-                        <li>- Coordinated 5 on-site promotional events, which contributed to a 20% increase in sales.</li>
+                    
+     <li>- Coordinated 5 on-site promotional events, which contributed to a 20% increase in sales.</li>
                         <li>- Identified 3 key consumer drivers through market analysis, helping to grow the customer base in a new market segment.</li>
                         <li>- Presented new promotional strategies and brand development concepts to stakeholders.</li>
-                    </ul>
+      
+               </ul>
                 </div>
                 <div class="relative">
                     <div class="absolute -left-11 top-1 w-6 h-6 bg-blue-600 rounded-full border-4 border-white"></div>
-                    <p class="text-sm text-gray-500">July 2022 - July 2023</p>
+                    <p class="text-sm text-gray-500">July 2022 
+ - July 2023</p>
                     <h3 class="text-xl font-bold">Commis Chef</h3>
                     <p class="font-semibold text-gray-700">MEGU - The Leela Palace, New Delhi</p>
                     <ul class="mt-2 text-gray-600">
-                        <li>- Upheld a premium brand's reputation for excellence by ensuring high standards of quality and consistency.</li>
+                        <li>- 
+ Upheld a premium brand's reputation for excellence by ensuring high standards of quality and consistency.</li>
                         <li>- Assisted in resolving operational challenges in real-time to enhance the guest experience.</li>
                         <li>- Applied rigorous attention to detail to optimize guest experience during daily service operations.</li>
-                        <li>- Maintained service excellence in a luxury setting, even during high-volume periods.</li>
+             
+            <li>- Maintained service excellence in a luxury setting, even during high-volume periods.</li>
                     </ul>
                 </div>
                 <div class="relative">
-                    <div class="absolute -left-11 top-1 w-6 h-6 bg-blue-600 rounded-full border-4 border-white"></div>
+                    <div class="absolute -left-11 top-1 w-6 
+ h-6 bg-blue-600 rounded-full border-4 border-white"></div>
                     <p class="text-sm text-gray-500">Sept 2021 - Jan 2022</p>
                     <h3 class="text-xl font-bold">Food Production & Marketing Intern</h3>
                     <p class="font-semibold text-gray-700">Taj Mahal Palace and Towers, Mumbai</p>
-                    <ul class="mt-2 text-gray-600">
+                 
+    <ul class="mt-2 text-gray-600">
                         <li>- Analyzed over 1,500 guest feedback forms, identifying 5 key loyalty drivers that informed a new retention strategy.</li>
                         <li>- Weekly data reports on customer preferences led to a 10% increase in positive online reviews.</li>
-                        <li>- Identified key drivers of customer dissatisfaction to inform retention and lifecycle marketing strategies.</li>
+               
+          <li>- Identified key drivers of customer dissatisfaction to inform retention and lifecycle marketing strategies.</li>
                         <li>- Coordinated various seasonal events, enhancing the customer journey through curated brand experiences.</li>
                     </ul>
                 </div>
-                <div class="relative">
+      
+           <div class="relative">
                     <div class="absolute -left-11 top-1 w-6 h-6 bg-blue-600 rounded-full border-4 border-white"></div>
                     <p class="text-sm text-gray-500">May 2019 - July 2019</p>
                     <h3 class="text-xl font-bold">Vocational Industrial trainee</h3>
-                    <p class="font-semibold text-gray-700">The leela Palace, Bangalore</p>
+          
+           <p class="font-semibold text-gray-700">The leela Palace, Bangalore</p>
                     <ul class="mt-2 text-gray-600">
                         <li>- Gained a holistic understanding of luxury hotel operations through departmental rotations.</li>
-                        <li>- Analyzed operational processes and provided suggestions that enhanced the guest experience.</li>
+                        <li>- Analyzed operational processes 
+ and provided suggestions that enhanced the guest experience.</li>
                         <li>- Developed a deep understanding of customer segmentation and cross-departmental initiatives.</li>
                     </ul>
                 </div>
             </div>
         </div>
-    </div>
+   
+  </div>
 </section>
 
         <section id="certifications" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl">
                     <h2 class="text-3xl font-bold mb-6 text-center">Certifications & Training</h2>
-                    <div class="grid md:grid-cols-2 gap-x-8 gap-y-4 text-gray-700">
+                    <div class="grid md:grid-cols-2 gap-x-8 gap-y-4 
+ text-gray-700">
                         <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:e7e3561b-fb7a-4b52-bc27-fbef91bafe69" target="_blank" rel="noopener noreferrer" class="block hover:text-blue-600 hover:underline">Diploma in Marketing Management - Alison</a>
                         <a href="https://www.canva.com/design/DAGswlWnvQk/EPL80rtEB1KrARVBipnR_g/edit?utm_content=DAGswlWnvQk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="block hover:text-blue-600 hover:underline">The Complete Digital Marketing Guide - Udemy</a>
-                        <a href="https://www.canva.com/design/DAGswph7t3k/AwgXHiInnACM-BOFjVtpHg/edit?utm_content=DAGswph7t3k&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="block hover:text-blue-600 hover:underline">Storytelling and Influencing - Macquarie University</a>
+                        <a href="https://www.canva.com/design/DAGswph7t3k/AwgXHiInnACM-BOFjVtpHg/edit?utm_content=DAGswph7t3k&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" 
+ rel="noopener noreferrer" class="block hover:text-blue-600 hover:underline">Storytelling and Influencing - Macquarie University</a>
                         <a href="https://www.canva.com/design/DAGswiv7Qjk/hyOkIxicCwbK0JXHedl8-Q/edit?utm_content=DAGswiv7Qjk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="block hover:text-blue-600 hover:underline">Ethics of AI - University of Helsinki</a>
                         <a href="https://www.canva.com/design/DAGswmF3IRk/-6OYsdVKiC4SW9JE3AQWhw/edit?utm_content=DAGswmF3IRk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="block hover:text-blue-600 hover:underline">Design Thinking for Innovation - University of Virginia</a>
-                        <a href="https://www.canva.com/design/DAGswvnPGic/2hx-rvuzvq6VzkeL4cuV1Q/edit?utm_content=DAGswvnPGic&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="block hover:text-blue-600 hover:underline">Understanding Research Methods - University of London</a>
+                
+         <a href="https://www.canva.com/design/DAGswvnPGic/2hx-rvuzvq6VzkeL4cuV1Q/edit?utm_content=DAGswvnPGic&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="block hover:text-blue-600 hover:underline">Understanding Research Methods - University of London</a>
                         <a href="https://www.canva.com/design/DAGswuDXXy8/Hw1XcYEPKJoUg5MHn44uCQ/edit?utm_content=DAGswuDXXy8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="block hover:text-blue-600 hover:underline">Data Collection - University of Michigan</a>
                            <a href="https://www.canva.com/design/DAG0eYv-A_Q/GCf3EwqGYMGTzlz85WXEBg/view?utm_content=DAG0eYv-A_Q&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h34cbdccd43" >Camera Control - Michigan State University</a>
 
-                    </div>
+         
+            </div>
                 </div>
             </div>
         </section>
@@ -631,21 +734,26 @@
         <section id="contact" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl text-center">
-                    <h2 class="text-3xl font-bold">Let's Connect</h2>
-                    <p class="text-gray-600 mt-4 mb-8">I'm currently seeking new opportunities in marketing and would love to hear how I can help your team succeed. Please feel free to reach out.</p>
+    
+                 <h2 class="text-3xl font-bold">Let's Connect</h2>
+                    <p class="text-gray-600 mt-4 mb-8">I'm currently seeking new opportunities in marketing and would love to hear how I can help your team succeed.
+ Please feel free to reach out.</p>
                     <a href="mailto:apoorvabhatnagar679@gmail.com" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-300">apoorvabhatnagar679@gmail.com</a>
                     <div class="flex justify-center space-x-6 mt-8">
                         <a href="https://www.linkedin.com/in/apoorva-bhatnagar-a18017184/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600">
-                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.337 7.433c-.945 0-1.708-.763-1.708-1.708s.763-1.708 1.708-1.708c.945 0 1.708.763 1.708 1.708s-.763 1.708-1.708 1.708zm1.338 8.905H4.002v-8.59h2.673v8.59zM17.67 2H6.33C4.002 2 2 4.002 2 6.33v11.34C2 20.002 4.002 22 6.33 22h11.34C20.002 22 22 20.002 22 17.67V6.33C22 4.002 20.002 2 17.67 2z" clip-rule="evenodd" /></svg>
+         
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.337 7.433c-.945 0-1.708-.763-1.708-1.708s.763-1.708 1.708-1.708c.945 0 1.708.763 1.708 1.708s-.763 1.708-1.708 1.708zm1.338 8.905H4.002v-8.59h2.673v8.59zM17.67 2H6.33C4.002 2 2 4.002 2 6.33v11.34C2 20.002 4.002 22 6.33 22h11.34C20.002 22 22 20.002 22 17.67V6.33C22 4.002 20.002 2 17.67 2z" clip-rule="evenodd" /></svg>
                         </a>
-                    </div>
+  
+                   </div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="py-6 bg-gray-900 text-gray-400 text-center">
-        <p>&copy; 2025 Apoorva Bhatnagar. All Rights Reserved.</p>
+        <p>&copy;
+ 2025 Apoorva Bhatnagar. All Rights Reserved.</p>
     </footer>
 
     <script>
@@ -656,11 +764,13 @@
                 mobileMenu.classList.toggle('hidden');
             });
 
-            document.querySelectorAll('#mobile-menu a, #desktop-menu a').forEach(link => {
+   
+          document.querySelectorAll('#mobile-menu a, #desktop-menu a').forEach(link => {
                 link.addEventListener('click', () => {
                     if (!mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.add('hidden');
                     }
+ 
                 });
             });
 
@@ -669,31 +779,34 @@
             const headerHeight = document.querySelector('header').offsetHeight;
 
             const makeActive = (id) => {
-                 navLinks.forEach(link => {
+          
+        navLinks.forEach(link => {
                     link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${id}`) {
+ if (link.getAttribute('href') === `#${id}`) {
                         link.classList.add('active');
-                    }
+ }
                 });
             };
-            
-            window.addEventListener('scroll', () => {
+ window.addEventListener('scroll', () => {
                 const scrollPosition = window.scrollY;
                 let currentSectionId = '';
 
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop - headerHeight - 1;
-                    if (scrollPosition >= sectionTop) {
+              
+       if (scrollPosition >= sectionTop) {
                         currentSectionId = section.id;
                     }
                 });
 
                 makeActive(currentSectionId);
-            });
+            
+ });
         });
     </script>
 </body>
 </html>
+
 
 
 
