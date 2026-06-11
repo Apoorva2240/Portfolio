@@ -49,14 +49,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
  /* Prevents text selection and the I-beam cursor */
         }
         .section-title {
-            @apply text-4xl font-bold text-center mb-12;
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
         }
         .skill-tag {
-            @apply bg-white/20 text-white text-xs font-medium px-3 py-1 rounded-full;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            font-size: 0.75rem;
+            line-height: 1rem;
+            font-weight: 500;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
         }
         /* Style for the active navigation link */
         .nav-link.active {
-            @apply text-blue-600 font-bold underline underline-offset-4 decoration-2;
+            color: #2563eb;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 2px;
         }
         /* Dark overlay for the background image */
         body::before {
@@ -105,6 +119,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Let project card content fill the card height and pin tags to the bottom,
+           so cards in the same row line up without leaving an empty gap. */
+        .glass-card > .p-6 {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .glass-card .tag-row {
+            margin-top: auto;
         }
         /* Bento grid layout for Skills section */
         .skills-bento {
@@ -118,6 +144,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .skills-bento .bento-medium {
             grid-column: span 1;
         }
+        .skills-bento .bento-large ul {
+            columns: 2;
+            column-gap: 2rem;
+        }
         @media (max-width: 767px) {
             .skills-bento {
                 grid-template-columns: 1fr;
@@ -125,6 +155,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .skills-bento .bento-large,
             .skills-bento .bento-medium {
                 grid-column: span 1;
+            }
+            .skills-bento .bento-large ul {
+                columns: 1;
             }
         }
         /* Scroll-triggered fade-in animations */
@@ -441,7 +474,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="p-6 bg-black/40 backdrop-blur-sm">
                             <h3 class="text-xl font-bold mb-2 text-white">Lallemand Brewing — SEO & Analytics Implementation</h3>
                             <p class="text-gray-200 mb-4 text-sm">Built end-to-end GTM tracking architecture and conducted SEO audits for a global B2B brewing ingredients brand. Implemented a 10-framework event model across a trilingual site, developed a cross-referenced keyword mapping strategy, and automated multilingual meta description generation using Microsoft Copilot Studio.</p>
-                            <div class="flex flex-wrap gap-2">
+                            <div class="tag-row flex flex-wrap gap-2">
                                 <span class="skill-tag">SEO Audit</span><span class="skill-tag">GA4/GTM</span><span class="skill-tag">Technical Analytics</span><span class="skill-tag">Keyword Mapping</span><span class="skill-tag">Copilot Studio</span>
                             </div>
                             <!-- TODO: Add case study link when available -->
@@ -475,7 +508,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         
      </h3>
                             <p class="text-gray-200 mb-4 text-sm">Executed a comprehensive digital marketing strategy for a new e-commerce brand, managing a scaling budget across Search, Display, and Shopping ads to maximize profitability and ROAS.</p>
-                            <div class="flex flex-wrap gap-2">
+                            <div class="tag-row flex flex-wrap gap-2">
          
                         <span class="skill-tag">SEO/SEM</span><span class="skill-tag">PPC</span><span class="skill-tag">Budget Management</span>
                             </div>
@@ -510,7 +543,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </h3>
                             <p class="text-gray-200 mb-4 text-sm">Developed a social media launch strategy, using audience 
  analysis and performance data to select platforms, manage influencer campaigns, and drive revenue with a high ROI.</p>
-                            <div class="flex flex-wrap gap-2">
+                            <div class="tag-row flex flex-wrap gap-2">
                                 <span class="skill-tag">Social Media</span><span class="skill-tag">Influencer Marketing</span><span class="skill-tag">Data Analysis</span>
                
               </div>
@@ -545,7 +578,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                            </h3>
                             <p class="text-gray-200 mb-4 text-sm">Conducted a market entry analysis for a skincare brand launching in Canada.
  Delivered a strategic plan including market sizing, competitor analysis, and localized growth initiatives.</p>
-                            <div class="flex flex-wrap gap-2">
+                            <div class="tag-row flex flex-wrap gap-2">
                                 <span class="skill-tag">Market Analysis</span><span class="skill-tag">Go-to-Market</span><span class="skill-tag">Forecasting</span>
                      
         </div>
@@ -582,7 +615,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <p class="text-gray-200 mb-4 text-sm">Led 
  the end-to-end design process for a new travel app concept.
  The project focused on translating an initial idea into a tangible user experience, starting with brainstorming and user persona development, then creating low-fidelity wireframes and high-fidelity mockups in Figma.</p>
-                            <div class="flex flex-wrap gap-2">
+                            <div class="tag-row flex flex-wrap gap-2">
                                 <span class="skill-tag">UX/UI Design</span><span class="skill-tag">Figma</span><span class="skill-tag">Prototyping</span><span class="skill-tag">User Research</span>
    
                           </div>
@@ -618,7 +651,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </h3>
                             <p class="text-gray-200 mb-4 
  text-sm">Analyzed an existing influencer campaign, identified key problems, and developed a new, data-driven strategy to reconnect with the brand's core community through authentic content and diversified influencer partnerships.</p>
-                            <div class="flex flex-wrap gap-2">
+                            <div class="tag-row flex flex-wrap gap-2">
                                 <span class="skill-tag">Influencer Marketing</span><span class="skill-tag">Brand Strategy</span><span class="skill-tag">Community Management</span>
     
                          </div>
@@ -654,7 +687,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </h3>
                             <p class="text-gray-200 mb-4 text-sm">Conducted a 
  deep-dive analysis of the "Lava Jato" corruption scandal. Evaluated the ethical failures, the company's response, and formulated key takeaways on corporate governance, transparency, and crisis management.</p>
-                            <div class="flex flex-wrap gap-2">
+                            <div class="tag-row flex flex-wrap gap-2">
                                 <span class="skill-tag">Crisis Management</span><span class="skill-tag">Ethical Analysis</span><span class="skill-tag">Corporate Governance</span>
       
                        </div>
