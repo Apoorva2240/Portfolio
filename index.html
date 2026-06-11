@@ -87,31 +87,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             position: relative;
             z-index: 1;
         }
-        /* Animated gradient background for hero section */
-        #home {
-            position: relative;
-            overflow: hidden;
-        }
-        #home::before {
-            content: '';
-            position: absolute;
-            inset: -20%;
-            background:
-                radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.35), transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(96, 165, 250, 0.25), transparent 40%),
-                radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.3), transparent 50%);
-            z-index: -1;
-            animation: heroDrift 25s ease-in-out infinite alternate;
-        }
-        @keyframes heroDrift {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(-5%, 5%) scale(1.1); }
-        }
-        @media (prefers-reduced-motion: reduce) {
-            #home::before {
-                animation: none;
-            }
-        }
         /* Glassmorphism treatment for project cards and skill bento cards */
         .glass-card {
             background: rgba(255, 255, 255, 0.05) !important;
@@ -655,42 +630,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <span class="skill-tag">Influencer Marketing</span><span class="skill-tag">Brand Strategy</span><span class="skill-tag">Community Management</span>
     
                          </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg shadow-lg overflow-hidden">
-    
-                     <a href="https://www.canva.com/design/DAGtO4-mshE/fCVir5hDBHhCd3swkNMqWQ/view?utm_content=DAGtO4-mshE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha00fed76a0" target="_blank" rel="noopener noreferrer">
-                            <div class="relative">
-                                <img src="images/Project6.png" alt="Petrobras Case Study Image" class="w-full h-48 object-cover">
-       
-                          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                                    <div class="text-center text-white p-4">
-                        
-                 <p class="text-2xl font-bold">In-Depth</p>
-                                        <p class="text-sm uppercase tracking-wider mb-2">Ethical Analysis</p>
-                                     
-    <p class="text-2xl font-bold">$120B+</p>
-                                        <p class="text-sm uppercase tracking-wider">Debt from Scandal</p>
-                                    </div>
-              
-                   </div>
-                            </div>
-                        </a>
-                        <div class="p-6 bg-black/40 backdrop-blur-sm">
-   
-                          <h3 class="text-xl font-bold mb-2 text-white">
-                                <a href="https://www.canva.com/design/DAGtO4-mshE/fCVir5hDBHhCd3swkNMqWQ/view?utm_content=DAGtO4-mshE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha00fed76a0" target="_blank" rel="noopener noreferrer" class="hover:underline">
-                                  
-    Ethics & Sustainability Case Study: Petrobras
-                                </a>
-                            </h3>
-                            <p class="text-gray-200 mb-4 text-sm">Conducted a 
- deep-dive analysis of the "Lava Jato" corruption scandal. Evaluated the ethical failures, the company's response, and formulated key takeaways on corporate governance, transparency, and crisis management.</p>
-                            <div class="tag-row flex flex-wrap gap-2">
-                                <span class="skill-tag">Crisis Management</span><span class="skill-tag">Ethical Analysis</span><span class="skill-tag">Corporate Governance</span>
-      
-                       </div>
                         </div>
                     </div>
 
