@@ -39,9 +39,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             --gradient-text: linear-gradient(90deg, #c9aaff, #ff9e8f);
             --aurora-purple: #b388ff;
             --aurora-coral: #ff8a80;
+            --bg-dark: #0c0c14;
+            --bg-dark-surface: #17151f;
+            --text-primary: #ebebf2;
+            --text-secondary: #9594ad;
+            --border-dark: #2c2840;
         }
         html {
             scroll-behavior: smooth;
+            background-color: var(--bg-dark);
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -49,8 +55,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
-            color: #1f2937;
- /* Gray-800 */
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
             user-select: none;
  /* Prevents text selection and the I-beam cursor */
         }
@@ -72,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
         /* Style for the active navigation link */
         .nav-link.active {
-            color: #2563eb;
+            color: var(--gradient-start) !important;
             font-weight: 700;
             text-decoration: underline;
             text-underline-offset: 4px;
@@ -259,6 +265,68 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             opacity: 1;
             transform: translateY(0);
         }
+        /* Addendum 3: full dark mode conversion */
+        #about .text-gray-700 {
+            color: var(--text-secondary);
+        }
+        #experience .text-gray-500,
+        #experience .text-gray-600,
+        #experience .text-gray-700 {
+            color: var(--text-secondary);
+        }
+        #experience .text-gray-400 {
+            color: #6b6a82;
+        }
+        #experience .text-gray-800 {
+            color: var(--text-primary);
+        }
+        #experience .border-gray-200 {
+            border-color: var(--border-dark);
+        }
+        #certifications .text-gray-700 {
+            color: var(--text-secondary);
+        }
+        #certifications .text-gray-800 {
+            color: var(--text-primary);
+        }
+        #certifications .border-gray-200 {
+            border-color: var(--border-dark);
+        }
+        #certifications .additional-courses a {
+            color: var(--text-secondary);
+        }
+        #certifications .additional-courses a:hover {
+            color: var(--gradient-start);
+        }
+        .cert-badge-card {
+            background: #ffffff;
+            border-radius: 0.5rem;
+            padding: 12px;
+            border: 0.5px solid var(--border-dark);
+        }
+        #contact .text-gray-600 {
+            color: var(--text-secondary);
+        }
+        footer {
+            background-color: var(--bg-dark);
+            color: var(--text-secondary);
+            border-top: 0.5px solid var(--border-dark);
+        }
+        header {
+            background-color: rgba(12, 12, 20, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 0.5px solid var(--border-dark);
+        }
+        #mobile-menu-button {
+            color: var(--text-primary);
+        }
+        .nav-link.text-gray-600 {
+            color: var(--text-secondary);
+        }
+        .nav-link.text-gray-600:hover {
+            color: var(--text-primary);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -273,7 +341,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    <header class="bg-white/80 backdrop-blur-sm shadow-md sticky top-0 z-50">
+    <header class="shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-xl font-bold">Apoorva Bhatnagar</a>
             <div id="desktop-menu" class="hidden md:flex space-x-8 items-center">
@@ -283,9 +351,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <a href="#skills" class="nav-link text-gray-600 hover:text-blue-600 transition-colors duration-200">Skills</a>
                 <a href="#experience" class="nav-link text-gray-600 hover:text-blue-600 transition-colors duration-200">Experience</a>
                 <a href="#certifications" class="nav-link text-gray-600 hover:text-blue-600 transition-colors duration-200">Certifications</a>
-                <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200">Contact</a>
+                <a href="#contact" class="btn-primary px-4 py-2 rounded-full">Contact</a>
             </div>
-            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
@@ -296,7 +364,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a href="#skills" class="nav-link block py-2 text-gray-600 hover:text-blue-600">Skills</a>
             <a href="#experience" class="nav-link block py-2 text-gray-600 hover:text-blue-600">Experience</a>
             <a href="#certifications" class="nav-link block py-2 text-gray-600 hover:text-blue-600">Certifications</a>
-            <a href="#contact" class="block mt-2 bg-blue-600 text-white text-center px-4 py-2 rounded-full hover:bg-blue-700">Contact</a>
+            <a href="#contact" class="btn-primary block mt-2 text-center px-4 py-2 rounded-full">Contact</a>
         </div>
     </header>
 
@@ -305,9 +373,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="container mx-auto px-6 text-center">
                 <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white gradient-text">Apoorva Bhatnagar</h1>
                 <p class="text-xl md:text-2xl text-blue-300 font-semibold mt-4">Digital Marketing Specialist — SEO, Analytics & Data-Driven Strategy</p>
-                <p class="max-w-3xl mx-auto text-gray-200 mt-6 bg-black/20 backdrop-blur-sm p-4 rounded-lg">
-                    Pivoting from a rich background in luxury hospitality to dive into the everchanging world of marketing. I combine hands-on experience in premium brand environments, Simulations, and internships with a Master's degree in Digital & Data Marketing to build on my skills and deliver results. Looking forward to bringing positive energy and creating exciting consumer journeys.
-                </p>
                 <div class="mt-8">
                     <a href="#projects" class="btn-primary px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl">View My Work</a>
                 </div>
@@ -316,7 +381,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <section id="about" class="py-20">
             <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl">
+                <div class="glass-card max-w-4xl mx-auto p-8 md:p-12 rounded-lg">
                     <h2 class="text-3xl font-bold mb-6 text-center">My story</h2>
                     <p class="text-gray-700 mb-4">
                         I'm a Digital Marketing specialist currently completing an MSc in Digital & Data Marketing at NEOMA Business School, and interning as an SEO & Analytics specialist at Lallemand Brewing in Toulouse, France — working across SEO strategy, GA4/GTM implementation, and multilingual content optimization.
@@ -813,7 +878,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    
      <section id="experience" class="py-20">
     <div class="container mx-auto px-6">
-        <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl">
+        <div class="glass-card max-w-3xl mx-auto p-8 md:p-12 rounded-lg">
             <h2 class="section-title text-gray-800">Professional Experience</h2>
             <div class="space-y-8 relative border-l-2 border-gray-200 pl-10">
                 <div class="relative">
@@ -905,34 +970,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <section id="certifications" class="py-20">
     <div class="container mx-auto px-6">
-        <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl">
+        <div class="glass-card max-w-4xl mx-auto p-8 md:p-12 rounded-lg">
             <h2 class="text-3xl font-bold mb-10 text-center">Certifications & Training</h2>
             
             <div class="cert-badges grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-8 gap-x-4 text-gray-700 justify-items-center">
 
                 <a href="https://academy.yoast.com/certificate/8218/1927838/d5d51f28272eed55745f4d42e337fb5f/1/" target="_blank" class="flex flex-col items-center hover:text-blue-600 transition-colors">
-                    <div class="h-20 flex items-center justify-center">
+                    <div class="cert-badge-card h-20 flex items-center justify-center">
                         <img src="https://academy.yoast.com/badge/8218/1927838/d5d51f28272eed55745f4d42e337fb5f/1/" width="100" alt="Yoast WordPress for beginners badge" class="hover:opacity-80 transition-opacity duration-200 object-contain"/>
                     </div>
                     <span class="text-xs text-center font-medium mt-2">Yoast WordPress </span>
                 </a>
 
                 <a href="https://www.canva.com/design/DAG5JoMzJWE/1wuDVUQnZhlzGCgmBjPyyg/view?utm_content=DAG5JoMzJWE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5c2c55f792" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center hover:text-blue-600 transition-colors">
-                    <div class="h-20 flex items-center justify-center">
+                    <div class="cert-badge-card h-20 flex items-center justify-center">
                         <img src="images/G A Badge.png" alt="Google Analytics Certification Badge" width="100" class="hover:opacity-80 transition-opacity duration-200 object-contain" />
                     </div>
                     <span class="text-xs text-center font-medium mt-2">Google Analytics</span>
                 </a>
 
                 <a href="https://www.canva.com/design/DAG5FUPSGmw/8YYUQtjOaWrcB8EQAUo3qA/view?utm_content=DAG5FUPSGmw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1d72f84450" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center hover:text-blue-600 transition-colors">
-                    <div class="h-20 flex items-center justify-center">
+                    <div class="cert-badge-card h-20 flex items-center justify-center">
                         <img src="images/Hubspot.png" alt="Hubspot Marketing Hub Certificate" width="120" class="hover:opacity-80 transition-opacity duration-200 object-contain"/>
                     </div>
                     <span class="text-xs text-center font-medium mt-2">Hubspot Marketing Hub</span>
                 </a>
 
                 <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:d6acd8cc-74cb-4b85-880d-59433492adbd" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center hover:text-blue-600 transition-colors">
-                    <div class="h-20 flex items-center justify-center">
+                    <div class="cert-badge-card h-20 flex items-center justify-center">
                          <img src="images/Meta.png" alt="Meta Business Suite Certificate" width="120" class="hover:opacity-80 transition-opacity duration-200 object-contain"/>
                     </div>
                     <span class="text-xs text-center font-medium mt-2">Meta Business Suite</span>
@@ -942,7 +1007,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <hr class="my-8 border-gray-200">
 
             <h3 class="text-xl font-bold mb-4 text-center text-gray-800">Additional Courses</h3>
-            <div class="grid md:grid-cols-2 gap-x-8 gap-y-4 text-gray-700">
+            <div class="additional-courses grid md:grid-cols-2 gap-x-8 gap-y-4 text-gray-700">
                 
                 <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:e7e3561b-fb7a-4b52-bc27-fbef91bafe69" target="_blank" rel="noopener noreferrer" class="block hover:text-blue-600 hover:underline">Diploma in Marketing Management - Alison</a>
                 <a href="https://www.canva.com/design/DAGswlWnvQk/EPL80rtEB1KrARVBipnR_g/edit?utm_content=DAGswlWnvQk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="block hover:text-blue-600 hover:underline">The Complete Digital Marketing Guide - Udemy</a>
@@ -967,8 +1032,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <section id="contact" class="py-20">
             <div class="container mx-auto px-6">
-                <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl text-center">
-    
+                <div class="glass-card max-w-xl mx-auto p-8 md:p-12 rounded-lg text-center">
+
                  <h2 class="text-3xl font-bold">Let's Connect</h2>
                     <p class="text-gray-600 mt-4 mb-8">I'm currently seeking new opportunities in marketing and would love to hear how I can help your team succeed.
  Please feel free to reach out.</p>
@@ -981,7 +1046,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </section>
     </main>
 
-    <footer class="py-6 bg-gray-900 text-gray-400 text-center">
+    <footer class="py-6 text-center">
         <p>&copy;
  2026 Apoorva Bhatnagar. All Rights Reserved.</p>
     </footer>
