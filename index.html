@@ -33,6 +33,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             --background-color: #f9fafb;
  /* Gray-50 */
             --card-background: #ffffff;
+            --gradient-start: #c9aaff;
+            --gradient-end: #ff9e8f;
+            --gradient-accent: linear-gradient(90deg, #b388ff, #ff8a80);
+            --gradient-text: linear-gradient(90deg, #c9aaff, #ff9e8f);
+            --aurora-purple: #b388ff;
+            --aurora-coral: #ff8a80;
         }
         html {
             scroll-behavior: smooth;
@@ -83,7 +89,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background-color: rgba(0, 0, 0, 0.55);
             z-index: -1;
         }
-        main > section {
+        main > section,
+        footer {
             position: relative;
             z-index: 1;
         }
@@ -135,6 +142,113 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 columns: 1;
             }
         }
+        /* Duotone gradient text accent (Addendum 2) */
+        .gradient-text,
+        .project-grid .text-3xl.font-bold,
+        .project-grid .text-2xl.font-bold,
+        .project-grid .tag-row .skill-tag {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: var(--gradient-start) !important;
+ /* fallback for unsupported browsers/screen readers */
+        }
+        @supports (background-clip: text) or (-webkit-background-clip: text) {
+            .gradient-text,
+            .project-grid .text-3xl.font-bold,
+            .project-grid .text-2xl.font-bold,
+            .project-grid .tag-row .skill-tag {
+                color: transparent !important;
+            }
+        }
+        /* Gradient primary CTA buttons */
+        .btn-primary {
+            background: var(--gradient-accent);
+            color: #1a1625;
+            border: none;
+            font-weight: 500;
+        }
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+            transition: all 0.2s ease;
+        }
+        /* Gradient top-border accent on project cards */
+        .project-grid > .glass-card {
+            border-top-width: 3px;
+            border-image-source: var(--gradient-accent);
+            border-image-slice: 1;
+            border-image-width: 3px 0 0 0;
+        }
+        /* Accent treatment for headline skill tags */
+        .skill-tag-accent {
+            background: rgba(179, 136, 255, 0.12);
+            border: 0.5px solid var(--aurora-purple);
+            color: var(--gradient-start);
+            border-radius: 0.375rem;
+            padding: 0.125rem 0.5rem;
+            display: inline-block;
+        }
+        /* Page-wide aurora glow background */
+        .aurora-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .aurora-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+        }
+        .aurora-blob--purple-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--aurora-purple);
+            top: -100px;
+            left: -100px;
+        }
+        .aurora-blob--coral-1 {
+            width: 450px;
+            height: 450px;
+            background: var(--aurora-coral);
+            top: 10%;
+            right: -150px;
+            opacity: 0.12;
+        }
+        .aurora-blob--purple-2 {
+            width: 380px;
+            height: 380px;
+            background: var(--aurora-purple);
+            top: 60%;
+            left: 10%;
+            opacity: 0.1;
+        }
+        .aurora-blob--coral-2 {
+            width: 350px;
+            height: 350px;
+            background: var(--aurora-coral);
+            bottom: -100px;
+            right: 5%;
+            opacity: 0.1;
+        }
+        @media (max-width: 768px) {
+            .aurora-blob--purple-2,
+            .aurora-blob--coral-2 {
+                display: none;
+            }
+            .aurora-blob--purple-1,
+            .aurora-blob--coral-1 {
+                width: 250px;
+                height: 250px;
+                filter: blur(60px);
+            }
+        }
         /* Scroll-triggered fade-in animations */
         .fade-in {
             opacity: 0;
@@ -148,6 +262,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </style>
 </head>
 <body class="antialiased">
+    <div class="aurora-bg" aria-hidden="true">
+        <div class="aurora-blob aurora-blob--purple-1"></div>
+        <div class="aurora-blob aurora-blob--coral-1"></div>
+        <div class="aurora-blob aurora-blob--purple-2"></div>
+        <div class="aurora-blob aurora-blob--coral-2"></div>
+    </div>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQ8XSZDZ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -183,13 +303,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <main>
         <section id="home" class="py-20">
             <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white">Apoorva Bhatnagar</h1>
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white gradient-text">Apoorva Bhatnagar</h1>
                 <p class="text-xl md:text-2xl text-blue-300 font-semibold mt-4">Digital Marketing Specialist — SEO, Analytics & Data-Driven Strategy</p>
                 <p class="max-w-3xl mx-auto text-gray-200 mt-6 bg-black/20 backdrop-blur-sm p-4 rounded-lg">
                     Pivoting from a rich background in luxury hospitality to dive into the everchanging world of marketing. I combine hands-on experience in premium brand environments, Simulations, and internships with a Master's degree in Digital & Data Marketing to build on my skills and deliver results. Looking forward to bringing positive energy and creating exciting consumer journeys.
                 </p>
                 <div class="mt-8">
-                    <a href="#projects" class="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">View My Work</a>
+                    <a href="#projects" class="btn-primary px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl">View My Work</a>
                 </div>
             </div>
         </section>
@@ -652,14 +772,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <li>Keyword Mapping & Clustering</li>
                             <li>On-Page SEO</li>
                             <li>Meta Description Optimization</li>
-                            <li>Technical SEO Auditing</li>
+                            <li class="skill-tag-accent">Technical SEO Auditing</li>
                         </ul>
                     </div>
                     <div class="glass-card bento-large rounded-lg p-8">
                         <h3 class="text-lg font-semibold mb-3 text-white">Analytics & Tracking</h3>
                         <ul class="space-y-2 text-gray-200">
                             <li>Google Analytics 4 (Certified)</li>
-                            <li>Google Tag Manager</li>
+                            <li class="skill-tag-accent">Google Tag Manager</li>
                             <li>dataLayer Implementation</li>
                             <li>KPI Tracking & Reporting</li>
                             <li>A/B Testing</li>
@@ -670,7 +790,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <h3 class="text-lg font-semibold mb-3 text-white">Paid & Social</h3>
                         <ul class="space-y-2 text-gray-200">
                             <li>PPC — Search, Display & Shopping</li>
-                            <li>Meta Business Suite (Certified)</li>
+                            <li class="skill-tag-accent">Meta Business Suite (Certified)</li>
                             <li>Influencer Marketing</li>
                             <li>Social Media Strategy</li>
                         </ul>
@@ -679,7 +799,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <h3 class="text-lg font-semibold mb-3 text-white">Tools & Platforms</h3>
                         <ul class="space-y-2 text-gray-200">
                             <li>HubSpot Marketing Hub (Certified)</li>
-                            <li>Microsoft Copilot Studio</li>
+                            <li class="skill-tag-accent">Microsoft Copilot Studio</li>
                             <li>Figma</li>
                             <li>Canva</li>
                             <li>Excel (Advanced)</li>
@@ -854,7 +974,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  Please feel free to reach out.</p>
                     <a href="mailto:apoorvabhatnagar679@gmail.com" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-300">apoorvabhatnagar679@gmail.com</a>
                     <div class="mt-4">
-                        <a href="https://www.linkedin.com/in/apoorva-bhatnagar-a18017184/" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-300">Connect on LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/apoorva-bhatnagar-a18017184/" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block px-8 py-3 rounded-full text-lg font-semibold">Connect on LinkedIn</a>
                     </div>
                 </div>
             </div>
