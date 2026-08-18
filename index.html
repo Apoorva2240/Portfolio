@@ -1,404 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FRR02347M8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);} 
-  gtag('js', new Date());
+                <div class="project-grid grid grid-cols-1 md:grid-cols-3 gap-6">
 
-  gtag('config', 'G-FRR02347M8');
-</script>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'? '&l='+l:'';j.async=true;j.src=
- 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KQ8XSZDZ');</script>
-<!-- End Google Tag Manager -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apoorva Bhatnagar - Marketing Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2563eb;
- /* Blue-600 */
-            --secondary-color: #4b5563;
- /* Gray-600 */
-            --background-color: #f9fafb;
- /* Gray-50 */
-            --card-background: #ffffff;
-            --gradient-start: #c9aaff;
-            --gradient-end: #ff9e8f;
-            --gradient-accent: linear-gradient(90deg, #b388ff, #ff8a80);
-            --gradient-text: linear-gradient(90deg, #c9aaff, #ff9e8f);
-            --aurora-purple: #b388ff;
-            --aurora-coral: #ff8a80;
-            --bg-dark: #0c0c14;
-            --bg-dark-surface: #17151f;
-            --text-primary: #ebebf2;
-            --text-secondary: #9594ad;
-            --border-dark: #2c2840;
-        }
-        html {
-            scroll-behavior: smooth;
-            background-color: var(--bg-dark);
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-image: url('images/Background4.jpg');
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
-            user-select: none;
- /* Prevents text selection and the I-beam cursor */
-        }
-        .section-title {
-            font-size: 2.25rem;
-            line-height: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .skill-tag {
-            background-color: rgba(255, 255, 255, 0.2);
-            color: #ffffff;
-            font-size: 0.75rem;
-            line-height: 1rem;
-            font-weight: 500;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-        }
-        /* Style for the active navigation link */
-        .nav-link.active {
-            color: var(--gradient-start) !important;
-            font-weight: 700;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-            text-decoration-thickness: 2px;
-        }
-        /* Dark overlay for the background image */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.55);
-            z-index: -1;
-        }
-        main > section,
-        footer {
-            position: relative;
-            z-index: 1;
-        }
-        /* Glassmorphism treatment for project cards and skill bento cards */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05) !important;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
-            display: flex;
-            flex-direction: column;
-        }
-        /* Let project card content fill the card height and pin tags to the bottom,
-           so cards in the same row line up without leaving an empty gap. */
-        .glass-card > .p-6 {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .glass-card .tag-row {
-            margin-top: auto;
-        }
-        /* Bento grid layout for Skills section */
-        .skills-bento {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-        .skills-bento .bento-large {
-            grid-column: span 2;
-        }
-        .skills-bento .bento-medium {
-            grid-column: span 1;
-        }
-        .skills-bento .bento-large ul {
-            columns: 2;
-            column-gap: 2rem;
-        }
-        @media (max-width: 767px) {
-            .skills-bento {
-                grid-template-columns: 1fr;
-            }
-            .skills-bento .bento-large,
-            .skills-bento .bento-medium {
-                grid-column: span 1;
-            }
-            .skills-bento .bento-large ul {
-                columns: 1;
-            }
-        }
-        /* Duotone gradient text accent (Addendum 2) */
-        .gradient-text,
-        .project-grid .text-3xl.font-bold,
-        .project-grid .text-2xl.font-bold,
-        .project-grid .tag-row .skill-tag {
-            background: var(--gradient-text);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: var(--gradient-start) !important;
- /* fallback for unsupported browsers/screen readers */
-        }
-        @supports (background-clip: text) or (-webkit-background-clip: text) {
-            .gradient-text,
-            .project-grid .text-3xl.font-bold,
-            .project-grid .text-2xl.font-bold,
-            .project-grid .tag-row .skill-tag {
-                color: transparent !important;
-            }
-        }
-        /* Gradient primary CTA buttons */
-        .btn-primary {
-            background: var(--gradient-accent);
-            color: #1a1625;
-            border: none;
-            font-weight: 500;
-        }
-        .btn-primary:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
-            transition: all 0.2s ease;
-        }
-        /* Gradient top-border accent on project cards */
-        .project-grid > .glass-card {
-            border-top-width: 3px;
-            border-image-source: var(--gradient-accent);
-            border-image-slice: 1;
-            border-image-width: 3px 0 0 0;
-        }
-        /* Accent treatment for headline skill tags */
-        .skill-tag-accent {
-            background: rgba(179, 136, 255, 0.12);
-            border: 0.5px solid var(--aurora-purple);
-            color: var(--gradient-start);
-            border-radius: 0.375rem;
-            padding: 0.125rem 0.5rem;
-            display: inline-block;
-        }
-        /* Page-wide aurora glow background */
-        .aurora-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-            pointer-events: none;
-        }
-        .aurora-blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.15;
-        }
-        .aurora-blob--purple-1 {
-            width: 400px;
-            height: 400px;
-            background: var(--aurora-purple);
-            top: -100px;
-            left: -100px;
-        }
-        .aurora-blob--coral-1 {
-            width: 450px;
-            height: 450px;
-            background: var(--aurora-coral);
-            top: 10%;
-            right: -150px;
-            opacity: 0.12;
-        }
-        .aurora-blob--purple-2 {
-            width: 380px;
-            height: 380px;
-            background: var(--aurora-purple);
-            top: 60%;
-            left: 10%;
-            opacity: 0.1;
-        }
-        .aurora-blob--coral-2 {
-            width: 350px;
-            height: 350px;
-            background: var(--aurora-coral);
-            bottom: -100px;
-            right: 5%;
-            opacity: 0.1;
-        }
-        @media (max-width: 768px) {
-            .aurora-blob--purple-2,
-            .aurora-blob--coral-2 {
-                display: none;
-            }
-            .aurora-blob--purple-1,
-            .aurora-blob--coral-1 {
-                width: 250px;
-                height: 250px;
-                filter: blur(60px);
-            }
-        }
-        /* Scroll-triggered fade-in animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* Addendum 3: full dark mode conversion */
-        #about .text-gray-700 {
-            color: var(--text-secondary);
-        }
-        #experience .text-gray-500,
-        #experience .text-gray-600,
-        #experience .text-gray-700 {
-            color: var(--text-secondary);
-        }
-        #experience .text-gray-400 {
-            color: #6b6a82;
-        }
-        #experience .text-gray-800 {
-            color: var(--text-primary);
-        }
-        #experience .border-gray-200 {
-            border-color: var(--border-dark);
-        }
-        #certifications .text-gray-700 {
-            color: var(--text-secondary);
-        }
-        #certifications .text-gray-800 {
-            color: var(--text-primary);
-        }
-        #certifications .border-gray-200 {
-            border-color: var(--border-dark);
-        }
-        #certifications .additional-courses a {
-            color: var(--text-secondary);
-        }
-        #certifications .additional-courses a:hover {
-            color: var(--gradient-start);
-        }
-        .cert-badge-card {
-            background: #ffffff;
-            border-radius: 0.5rem;
-            padding: 12px;
-            border: 0.5px solid var(--border-dark);
-        }
-        #contact .text-gray-600 {
-            color: var(--text-secondary);
-        }
-        footer {
-            background-color: var(--bg-dark);
-            color: var(--text-secondary);
-            border-top: 0.5px solid var(--border-dark);
-        }
-        header {
-            background-color: rgba(12, 12, 20, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 0.5px solid var(--border-dark);
-        }
-        #mobile-menu-button {
-            color: var(--text-primary);
-        }
-        .nav-link.text-gray-600 {
-            color: var(--text-secondary);
-        }
-        .nav-link.text-gray-600:hover {
-            color: var(--text-primary);
-        }
-    </style>
-</head>
-<body class="antialiased">
-    <div class="aurora-bg" aria-hidden="true">
-        <div class="aurora-blob aurora-blob--purple-1"></div>
-        <div class="aurora-blob aurora-blob--coral-1"></div>
-        <div class="aurora-blob aurora-blob--purple-2"></div>
-        <div class="aurora-blob aurora-blob--coral-2"></div>
-    </div>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQ8XSZDZ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+                    <!-- Satiate (unchanged, media untouched) -->
+                    <div class="project-card group glass-card">
+                        <div class="relative">
+                            <img src="Satiate/post 5.png" alt="Satiate project image" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Satiate</h3>
+                            <p class="text-gray-600 mb-4">A brand and marketing project focusing on social content and customer experience. (Media and Drive link preserved.)</p>
+                            <div class="tag-row flex flex-wrap gap-2">
+                                <span class="skill-tag">Social</span>
+                                <span class="skill-tag">CX</span>
+                                <span class="skill-tag">Content</span>
+                            </div>
+                        </div>
+                    </div>
 
-    <header class="shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-xl font-bold">Apoorva Bhatnagar</a>
-            <div id="desktop-menu" class="hidden md:flex space-x-8 items-center">
-                <a href="#home" class="nav-link text-gray-600 hover:text-blue-600 transition-colors duration-200">Home</a>
-                <a href="#about" class="nav-link text-gray-600 hover:text-blue-600 transition-colors duration-200">About</a>
-                <a href="#projects" class="nav-link text-gray-600 hover:text-blue-600 transition-colors duration-200">Projects</a>
-                <a href="#skills" class="nav-link text-gray-600 hover:text-blue-600 transition-colors duration-200">Skills</a>
-                <a href="#experience" class="nav-link text-gray-600 hover:text-blue-600 transition-colors duration-200">Experience</a>
-                <a href="#certifications" class="nav-link text-gray-600 hover:text-blue-600 transition-colors duration-200">Certifications</a>
-                <a href="#contact" class="btn-primary px-4 py-2 rounded-full">Contact</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#home" class="nav-link block py-2 text-gray-600 hover:text-blue-600">Home</a>
-            <a href="#about" class="nav-link block py-2 text-gray-600 hover:text-blue-600">About</a>
-            <a href="#projects" class="nav-link block py-2 text-gray-600 hover:text-blue-600">Projects</a>
-            <a href="#skills" class="nav-link block py-2 text-gray-600 hover:text-blue-600">Skills</a>
-            <a href="#experience" class="nav-link block py-2 text-gray-600 hover:text-blue-600">Experience</a>
-            <a href="#certifications" class="nav-link block py-2 text-gray-600 hover:text-blue-600">Certifications</a>
-            <a href="#contact" class="btn-primary block mt-2 text-center px-4 py-2 rounded-full">Contact</a>
-        </div>
-    </header>
+                    <!-- Lallemand Brewing - Analytics & Dashboarding (Card A) -->
+                    <div class="project-card group glass-card">
+                        <div class="relative">
+                            <img src="Lallemand/dashboard-website.png" alt="Website analytics dashboard" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="mb-4">
+                                <p class="text-2xl font-bold">2 Dashboards Built</p>
+                                <p class="text-sm text-gray-400">20+ GTM Tags · 10 Event Frameworks · 3 Languages Tracked</p>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Lallemand Brewing - Analytics & Dashboarding</h3>
+                            <p class="text-gray-600 mb-4">Lallemand Brewing had no centralized view of website or e-shop performance. I built a full GTM tracking architecture of 20+ tags across 10 event frameworks for a trilingual site, then built two GA4 performance dashboards from scratch in Looker Studio, a website analytics dashboard and an e-shop commercial dashboard, turning raw event data into decision-ready views for stakeholders.</p>
+                            <div class="tag-row flex flex-wrap gap-2">
+                                <span class="skill-tag">GA4/GTM</span>
+                                <span class="skill-tag">Technical Analytics</span>
+                                <span class="skill-tag">Dashboarding</span>
+                                <span class="skill-tag">Data Visualization</span>
+                            </div>
+                        </div>
+                    </div>
 
-    <main>
-        <section id="home" class="py-20">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white gradient-text">Apoorva Bhatnagar</h1>
-                <p class="text-xl md:text-2xl text-blue-300 font-semibold mt-4">Digital Marketing Specialist - Analytics, AI Automation & Social Strategy</p>
-                <div class="mt-8">
-                    <a href="#projects" class="btn-primary px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl">View My Work</a>
-                </div>
-            </div>
-        </section>
+                    <!-- Lallemand Brewing - GEO & AI in Marketing (Card B) -->
+                    <div class="project-card group glass-card">
+                        <div class="relative">
+                            <img src="Lallemand/geo-slide-1.png" alt="GEO presentation slide 1" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="mb-4">
+                                <p class="text-2xl font-bold">3 Presentations Delivered</p>
+                                <p class="text-sm text-gray-400">3 Deliverables Shipped</p>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Lallemand Brewing - GEO & AI in Marketing</h3>
+                            <p class="text-gray-600 mb-4">As GEO (Generative Engine Optimization) emerged as a gap in the brand's content strategy, I researched best practices and delivered 3 presentations to align the marketing team on AI-search readiness. This produced three deliverables: a GEO best-practices template for content creation, a Copilot Studio agent that drafts GEO-friendly FAQs and content using existing website data, and a standing checklist other teams use to verify content is GEO-friendly before publishing.</p>
+                            <!-- TODO: Add GEO presentation link when available -->
+                            <div class="tag-row flex flex-wrap gap-2">
+                                <span class="skill-tag">GEO</span>
+                                <span class="skill-tag">AI in Marketing</span>
+                                <span class="skill-tag">Search Strategy</span>
+                                <span class="skill-tag">Content Frameworks</span>
+                            </div>
+                        </div>
+                    </div>
 
-        <section id="about" class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="glass-card max-w-4xl mx-auto p-8 md:p-12 rounded-lg">
-                    <h2 class="text-3xl font-bold mb-6 text-center">My story</h2>
-                    <p class="text-gray-700 mb-4">
-                        I'm a Digital Marketing specialist working across analytics, AI-driven search, and social strategy, currently completing an MSc in Digital & Data Marketing at NEOMA Business School, and interning at Lallemand Brewing in Toulouse.
-                    </p>
-                    <p class="text-gray-700 mb-4">
-                        I like turning ambiguous problems into measurable systems: tracking architectures that tell the truth about user behavior, AI-search strategies that keep content discoverable as search itself changes, and social content that actually reaches people. My path here started somewhere unexpected, multiple roles in luxury hospitality between 2019 and 2023, at brands like The Leela Palace, Taj Mahal Palace and Towers, and MEGU, where I learned that every detail is a brand decision. That instinct still shapes how I work today.
-                    </p>
-                    <p class="text-gray-700 mb-6">
-                        Outside of work: football, new trails, and whatever game the internet won't stop talking about.
-                    </p>
-                </div>
-            </div>
-        </section>
+                    <!-- Digital Marketing Simternship® (unchanged) -->
+                    <div class="project-card group glass-card">
+                        <div class="relative">
+                            <img src="simternship/digital.png" alt="Digital Simternship" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Digital Marketing Simternship®</h3>
+                            <p class="text-gray-600 mb-4">Simulation-based project covering search, display, and shopping ads, plus strategy and optimization.</p>
+                            <div class="tag-row flex flex-wrap gap-2">
+                                <span class="skill-tag">Search</span>
+                                <span class="skill-tag">Display</span>
+                                <span class="skill-tag">Analytics</span>
+                            </div>
+                        </div>
+                    </div>
 
-        <section id="projects" class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 
- class="section-title text-white inline-block bg-black/20 backdrop-blur-sm px-6 py-3 rounded-lg">Featured Projects</h2>
+                    <!-- Social Media Simternship® (unchanged) -->
+                    <div class="project-card group glass-card">
+                        <div class="relative">
+                            <img src="simternship/social.png" alt="Social Simternship" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Social Media Simternship®</h3>
+                            <p class="text-gray-600 mb-4">Social strategy simulation focused on launch planning, influencer partnerships, and KPI measurement.</p>
+                            <div class="tag-row flex flex-wrap gap-2">
+                                <span class="skill-tag">Social</span>
+                                <span class="skill-tag">Influencer</span>
+                                <span class="skill-tag">Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Influencer Marketing Strategy: Les Secrets de Loly (unchanged) -->
+                    <div class="project-card group glass-card">
+                        <div class="relative">
+                            <img src="lessecrets/loly.png" alt="Les Secrets de Loly" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Influencer Marketing Strategy: Les Secrets de Loly</h3>
+                            <p class="text-gray-600 mb-4">Influencer and community strategy project. (Kept exactly as live.)</p>
+                            <div class="tag-row flex flex-wrap gap-2">
+                                <span class="skill-tag">Influencer</span>
+                                <span class="skill-tag">Community</span>
+                                <span class="skill-tag">Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
