@@ -139,40 +139,15 @@
             }
         }
 
-        /* Hero Name Styling Fix (Phase 1) */
         .hero-title {
             display: inline-block;
             line-height: 1.2;
-            padding-bottom: 0.15em; /* Prevents text-clip box from cropping descenders */
+            padding-bottom: 0.15em;
             background: linear-gradient(135deg, #e0e7ff 0%, #f472b6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Experience Timeline Overhaul (Phase 2) */
-        .timeline-container {
-            position: relative;
-        }
-
-        .timeline-container::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, rgba(192, 132, 252, 0.6) 0%, rgba(244, 114, 182, 0.3) 100%);
-        }
-
-        /* Certifications Dark Glass Badges (Phase 3) */
-        .cert-badge-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 0.75rem;
-        }
-
-        /* Project Card Hover Overlay Toggle (Phase 5) */
         .project-card {
             position: relative;
             overflow: hidden;
@@ -318,7 +293,6 @@
             color: var(--text-primary);
         }
 
-        /* Carousel & Video Styles for Satiate Section */
         .horizontal-container {
             display: flex;
             justify-content: center;
@@ -456,10 +430,8 @@
         <div class="aurora-blob aurora-blob--purple-2"></div>
         <div class="aurora-blob aurora-blob--coral-2"></div>
     </div>
-    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQ8XSZDZ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
     <header class="shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -489,7 +461,7 @@
     </header>
 
     <main>
-        <!-- Phase 1: Hero Section -->
+        <!-- Hero Section -->
         <section id="home" class="py-20">
             <div class="container mx-auto px-6 text-center">
                 <h1 class="hero-title text-4xl md:text-6xl font-extrabold text-white">Apoorva Bhatnagar</h1>
@@ -500,7 +472,7 @@
             </div>
         </section>
 
-        <!-- Phase 6: Contrast & Typography Upgrades for "My Story" -->
+        <!-- About Section -->
         <section id="about" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="rounded-2xl bg-slate-950/60 border border-white/10 max-w-4xl mx-auto p-8 md:p-12 backdrop-blur-md">
@@ -530,7 +502,7 @@
             </div>
         </section>
 
-        <!-- Phase 5: Project Cards Hover Overlay Toggle -->
+        <!-- Projects Section -->
         <section id="projects" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
@@ -571,157 +543,161 @@
 
                 <div class="project-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
 
- <!-- Card 1: Lallemand Brewing Analytics -->
-<div class="project-card glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
-    <div class="project-card-content flex flex-col h-full justify-between">
-        <img src="images/Dashboard1.png" alt="Dashboard & Analytics" class="w-full h-48 object-cover">
-        <div class="p-6 flex flex-col flex-grow justify-between">
-            <div>
-                <h3 class="text-xl font-bold mb-2 text-white">Lallemand Brewing: Analytics & Dashboarding</h3>
-                <p class="text-slate-200 mb-4 text-sm">Lallemand Brewing had no centralized view of website or e-shop performance. I built a full GTM tracking architecture of 20+ tags across 10 event frameworks for a trilingual site, then built two GA4 performance dashboards from scratch in Looker Studio, a website analytics dashboard and an e-shop commercial dashboard, turning raw event data into decision-ready views for stakeholders.</p>
-            </div>
-            <div class="tag-row flex flex-wrap gap-2 mt-auto">
-                <span class="skill-tag">GA4/GTM</span><span class="skill-tag">Technical Analytics</span><span class="skill-tag">Dashboarding</span><span class="skill-tag">Data Visualization</span>
-            </div>
-        </div>
-    </div>
-    <div class="project-card-overlay text-center text-white p-6">
-        <div class="mb-3"><p class="text-3xl font-bold">2</p><p class="text-xs uppercase tracking-wider text-slate-300">Dashboards Built</p></div>
-        <div class="mb-3"><p class="text-3xl font-bold">20+</p><p class="text-xs uppercase tracking-wider text-slate-300">GTM Tags</p></div>
-        <div class="mb-3"><p class="text-3xl font-bold">10</p><p class="text-xs uppercase tracking-wider text-slate-300">Event Frameworks</p></div>
-        <div><p class="text-3xl font-bold">3</p><p class="text-xs uppercase tracking-wider text-slate-300">Languages Tracked</p></div>
-    </div>
-</div>
+                    <!-- Card 1: Lallemand Brewing Analytics -->
+                    <div class="project-card glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
+                        <div class="project-card-content flex flex-col h-full justify-between">
+                            <img src="images/Dashboard1.png" alt="Dashboard & Analytics" class="w-full h-48 object-cover">
+                            <div class="p-6 flex flex-col flex-grow justify-between">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2 text-white">Lallemand Brewing: Analytics & Dashboarding</h3>
+                                    <p class="text-slate-200 mb-4 text-sm">Lallemand Brewing had no centralized view of website or e-shop performance. I built a full GTM tracking architecture of 20+ tags across 10 event frameworks for a trilingual site, then built two GA4 performance dashboards from scratch in Looker Studio, a website analytics dashboard and an e-shop commercial dashboard, turning raw event data into decision-ready views for stakeholders.</p>
+                                </div>
+                                <div class="tag-row flex flex-wrap gap-2 mt-auto">
+                                    <span class="skill-tag">GA4/GTM</span><span class="skill-tag">Technical Analytics</span><span class="skill-tag">Dashboarding</span><span class="skill-tag">Data Visualization</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card-overlay text-center text-white p-6">
+                            <div class="mb-3"><p class="text-3xl font-bold">2</p><p class="text-xs uppercase tracking-wider text-slate-300">Dashboards Built</p></div>
+                            <div class="mb-3"><p class="text-3xl font-bold">20+</p><p class="text-xs uppercase tracking-wider text-slate-300">GTM Tags</p></div>
+                            <div class="mb-3"><p class="text-3xl font-bold">10</p><p class="text-xs uppercase tracking-wider text-slate-300">Event Frameworks</p></div>
+                            <div><p class="text-3xl font-bold">3</p><p class="text-xs uppercase tracking-wider text-slate-300">Languages Tracked</p></div>
+                        </div>
+                    </div>
 
-<!-- Card 2: Lallemand Brewing GEO -->
-<div class="project-card glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
-    <div class="project-card-content flex flex-col h-full justify-between">
-        <div class="w-full h-48 flex items-center justify-center bg-blue-900/40 text-white text-center font-semibold px-4">
-            Lallemand Brewing: GEO & AI in Marketing
-        </div>
-        <div class="p-6 flex flex-col flex-grow justify-between">
-            <div>
-                <h3 class="text-xl font-bold mb-2 text-white">Lallemand Brewing: GEO & AI in Marketing</h3>
-                <p class="text-slate-200 mb-4 text-sm">As GEO (Generative Engine Optimization) emerged as a gap in the brand's content strategy, I researched best practices and delivered 3 presentations to align the marketing team on AI-search readiness. This produced three deliverables: a GEO best-practices template for content creation, a Copilot Studio agent that drafts GEO-friendly FAQs and content using existing website data, and a standing checklist other teams use to verify content is GEO-friendly before publishing.</p>
-            </div>
-            <div class="tag-row flex flex-wrap gap-2 mt-auto">
-                <span class="skill-tag">GEO</span><span class="skill-tag">AI in Marketing</span><span class="skill-tag">Search Strategy</span><span class="skill-tag">Content Frameworks</span>
-            </div>
-        </div>
-    </div>
-    <div class="project-card-overlay text-center text-white p-6">
-        <div class="mb-4"><p class="text-4xl font-bold">3</p><p class="text-xs uppercase tracking-wider text-slate-300 mt-1">Presentations Delivered</p></div>
-        <div><p class="text-4xl font-bold">3</p><p class="text-xs uppercase tracking-wider text-slate-300 mt-1">Deliverables Shipped</p></div>
-    </div>
-</div>
+                    <!-- Card 2: Lallemand Brewing GEO -->
+                    <div class="project-card glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
+                        <div class="project-card-content flex flex-col h-full justify-between">
+                            <div class="w-full h-48 flex items-center justify-center bg-blue-900/40 text-white text-center font-semibold px-4">
+                                Lallemand Brewing: GEO & AI in Marketing
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow justify-between">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2 text-white">Lallemand Brewing: GEO & AI in Marketing</h3>
+                                    <p class="text-slate-200 mb-4 text-sm">As GEO (Generative Engine Optimization) emerged as a gap in the brand's content strategy, I researched best practices and delivered 3 presentations to align the marketing team on AI-search readiness. This produced three deliverables: a GEO best-practices template for content creation, a Copilot Studio agent that drafts GEO-friendly FAQs and content using existing website data, and a standing checklist other teams use to verify content is GEO-friendly before publishing.</p>
+                                </div>
+                                <div class="tag-row flex flex-wrap gap-2 mt-auto">
+                                    <span class="skill-tag">GEO</span><span class="skill-tag">AI in Marketing</span><span class="skill-tag">Search Strategy</span><span class="skill-tag">Content Frameworks</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card-overlay text-center text-white p-6">
+                            <div class="mb-4"><p class="text-4xl font-bold">3</p><p class="text-xs uppercase tracking-wider text-slate-300 mt-1">Presentations Delivered</p></div>
+                            <div><p class="text-4xl font-bold">3</p><p class="text-xs uppercase tracking-wider text-slate-300 mt-1">Deliverables Shipped</p></div>
+                        </div>
+                    </div>
 
-<!-- Card 3: Teology -->
-<div class="project-card glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
-    <div class="project-card-content flex flex-col h-full justify-between">
-        <a href="https://canva.link/z4vcl9234tpogww" target="_blank" rel="noopener noreferrer">
-            <img src="images/Project3.png" alt="Teology Brand Strategy & Social Media Campaign" class="w-full h-48 object-cover">
-        </a>
-        <div class="p-6 flex flex-col flex-grow justify-between">
-            <div>
-                <h3 class="text-xl font-bold mb-2 text-white">Teology: Brand & Digital Marketing Strategy</h3>
-                <p class="text-slate-200 mb-4 text-sm">Developed visual brand identity, storytelling frameworks, and digital campaign strategies for Teology to drive audience acquisition, boost brand recognition, and improve customer retention across social channels.</p>
-            </div>
-            <div class="tag-row flex flex-wrap gap-2 mt-auto">
-                <span class="skill-tag">Brand Strategy</span><span class="skill-tag">Digital Marketing</span><span class="skill-tag">Social Media</span><span class="skill-tag">Content Creation</span>
-            </div>
-        </div>
-    </div>
-    <a href="https://canva.link/z4vcl9234tpogww" target="_blank" rel="noopener noreferrer" class="project-card-overlay text-center text-white p-6">
-        <p class="text-2xl font-bold">Brand Strategy</p>
-        <p class="text-xs uppercase tracking-wider mb-4 text-slate-300">& Positioning</p>
-        <p class="text-2xl font-bold">Digital Campaigns</p>
-        <p class="text-xs uppercase tracking-wider text-slate-300">Growth & Engagement</p>
-    </a>
-</div>
+                    <!-- Card 3: Teology -->
+                    <div class="project-card glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
+                        <div class="project-card-content flex flex-col h-full justify-between">
+                            <a href="https://canva.link/z4vcl9234tpogww" target="_blank" rel="noopener noreferrer">
+                                <img src="images/Project3.png" alt="Teology Brand Strategy & Social Media Campaign" class="w-full h-48 object-cover">
+                            </a>
+                            <div class="p-6 flex flex-col flex-grow justify-between">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2 text-white">Teology: Brand & Digital Marketing Strategy</h3>
+                                    <p class="text-slate-200 mb-4 text-sm">Developed visual brand identity, storytelling frameworks, and digital campaign strategies for Teology to drive audience acquisition, boost brand recognition, and improve customer retention across social channels.</p>
+                                </div>
+                                <div class="tag-row flex flex-wrap gap-2 mt-auto">
+                                    <span class="skill-tag">Brand Strategy</span><span class="skill-tag">Digital Marketing</span><span class="skill-tag">Social Media</span><span class="skill-tag">Content Creation</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://canva.link/z4vcl9234tpogww" target="_blank" rel="noopener noreferrer" class="project-card-overlay text-center text-white p-6">
+                            <p class="text-2xl font-bold">Brand Strategy</p>
+                            <p class="text-xs uppercase tracking-wider mb-4 text-slate-300">& Positioning</p>
+                            <p class="text-2xl font-bold">Digital Campaigns</p>
+                            <p class="text-xs uppercase tracking-wider text-slate-300">Growth & Engagement</p>
+                        </a>
+                    </div>
 
-<!-- Card 4: Digital Marketing Simternship -->
-<div class="project-card glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
-    <div class="project-card-content flex flex-col h-full justify-between">
-        <a href="https://www.canva.com/design/DAGskiriLr8/wkmiWaadiryaktt8J4Za7g/view?utm_content=DAGskiriLr8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h45a0a2c515" target="_blank" rel="noopener noreferrer">
-            <img src="images/Project1.png" alt="Digital Marketing Simternship Dashboard" class="w-full h-48 object-cover">
-        </a>
-        <div class="p-6 flex flex-col flex-grow justify-between">
-            <div>
-                <h3 class="text-xl font-bold mb-2 text-white">
-                    <a href="https://www.canva.com/design/DAGskiriLr8/wkmiWaadiryaktt8J4Za7g/view?utm_content=DAGskiriLr8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h45a0a2c515" target="_blank" rel="noopener noreferrer" class="hover:underline">
-                        Digital Marketing Simternship®
-                    </a>
-                </h3>
-                <p class="text-slate-200 mb-4 text-sm">Executed a comprehensive digital marketing strategy for a new e-commerce brand, managing a scaling budget across Search, Display, and Shopping ads to maximize profitability and ROAS.</p>
-            </div>
-            <div class="tag-row flex flex-wrap gap-2 mt-auto">
-                <span class="skill-tag">SEO/SEM</span><span class="skill-tag">PPC</span><span class="skill-tag">Budget Management</span>
-            </div>
-        </div>
-    </div>
-    <a href="https://www.canva.com/design/DAGskiriLr8/wkmiWaadiryaktt8J4Za7g/view?utm_content=DAGskiriLr8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h45a0a2c515" target="_blank" rel="noopener noreferrer" class="project-card-overlay text-center text-white p-6">
-        <div class="mb-3"><p class="text-3xl font-bold">$166K+</p><p class="text-xs uppercase tracking-wider text-slate-300">Profit Generated</p></div>
-        <div class="mb-3"><p class="text-3xl font-bold">2.39</p><p class="text-xs uppercase tracking-wider text-slate-300">Return on Ad Spend</p></div>
-        <div><p class="text-3xl font-bold">4,971</p><p class="text-xs uppercase tracking-wider text-slate-300">Total Conversions</p></div>
-    </a>
-</div>
+                    <!-- Card 4: Digital Marketing Simternship -->
+                    <div class="project-card glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
+                        <div class="project-card-content flex flex-col h-full justify-between">
+                            <a href="https://www.canva.com/design/DAGskiriLr8/wkmiWaadiryaktt8J4Za7g/view?utm_content=DAGskiriLr8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h45a0a2c515" target="_blank" rel="noopener noreferrer">
+                                <img src="images/Project1.png" alt="Digital Marketing Simternship Dashboard" class="w-full h-48 object-cover">
+                            </a>
+                            <div class="p-6 flex flex-col flex-grow justify-between">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2 text-white">
+                                        <a href="https://www.canva.com/design/DAGskiriLr8/wkmiWaadiryaktt8J4Za7g/view?utm_content=DAGskiriLr8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h45a0a2c515" target="_blank" rel="noopener noreferrer" class="hover:underline">
+                                            Digital Marketing Simternship®
+                                        </a>
+                                    </h3>
+                                    <p class="text-slate-200 mb-4 text-sm">Executed a comprehensive digital marketing strategy for a new e-commerce brand, managing a scaling budget across Search, Display, and Shopping ads to maximize profitability and ROAS.</p>
+                                </div>
+                                <div class="tag-row flex flex-wrap gap-2 mt-auto">
+                                    <span class="skill-tag">SEO/SEM</span><span class="skill-tag">PPC</span><span class="skill-tag">Budget Management</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://www.canva.com/design/DAGskiriLr8/wkmiWaadiryaktt8J4Za7g/view?utm_content=DAGskiriLr8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h45a0a2c515" target="_blank" rel="noopener noreferrer" class="project-card-overlay text-center text-white p-6">
+                            <div class="mb-3"><p class="text-3xl font-bold">$166K+</p><p class="text-xs uppercase tracking-wider text-slate-300">Profit Generated</p></div>
+                            <div class="mb-3"><p class="text-3xl font-bold">2.39</p><p class="text-xs uppercase tracking-wider text-slate-300">Return on Ad Spend</p></div>
+                            <div><p class="text-3xl font-bold">4,971</p><p class="text-xs uppercase tracking-wider text-slate-300">Total Conversions</p></div>
+                        </a>
+                    </div>
 
-<!-- Card 5: Social Media Simternship -->
-<div class="project-card glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
-    <div class="project-card-content flex flex-col h-full justify-between">
-        <a href="https://www.canva.com/design/DAGsky-mc0M/650QuBfgNT26gEcbNZaQIg/edit?utm_content=DAGsky-mc0M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer">
-            <img src="images/Project2.png" alt="Social Media Simternship Dashboard" class="w-full h-48 object-cover">
-        </a>
-        <div class="p-6 flex flex-col flex-grow justify-between">
-            <div>
-                <h3 class="text-xl font-bold mb-2 text-white">
-                    <a href="https://www.canva.com/design/DAGsky-mc0M/650QuBfgNT26gEcbNZaQIg/edit?utm_content=DAGsky-mc0M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="hover:underline">
-                        Social Media Simternship®
-                    </a>
-                </h3>
-                <p class="text-slate-200 mb-4 text-sm">Developed a social media launch strategy, using audience analysis and performance data to select platforms, manage influencer campaigns, and drive revenue with a high ROI.</p>
-            </div>
-            <div class="tag-row flex flex-wrap gap-2 mt-auto">
-                <span class="skill-tag">Social Media</span><span class="skill-tag">Influencer Marketing</span><span class="skill-tag">Data Analysis</span>
-            </div>
-        </div>
-    </div>
-    <a href="https://www.canva.com/design/DAGsky-mc0M/650QuBfgNT26gEcbNZaQIg/edit?utm_content=DAGsky-mc0M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="project-card-overlay text-center text-white p-6">
-        <div class="mb-3"><p class="text-3xl font-bold">$66K+</p><p class="text-xs uppercase tracking-wider text-slate-300">Revenue (Instagram)</p></div>
-        <div class="mb-3"><p class="text-3xl font-bold">3.64x</p><p class="text-xs uppercase tracking-wider text-slate-300">Influencer ROAS</p></div>
-        <div><p class="text-3xl font-bold">80K+</p><p class="text-xs uppercase tracking-wider text-slate-300">Total Engagements</p></div>
-    </a>
-</div>
+                    <!-- Card 5: Social Media Simternship -->
+                    <div class="project-card glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
+                        <div class="project-card-content flex flex-col h-full justify-between">
+                            <a href="https://www.canva.com/design/DAGsky-mc0M/650QuBfgNT26gEcbNZaQIg/edit?utm_content=DAGsky-mc0M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer">
+                                <img src="images/Project2.png" alt="Social Media Simternship Dashboard" class="w-full h-48 object-cover">
+                            </a>
+                            <div class="p-6 flex flex-col flex-grow justify-between">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2 text-white">
+                                        <a href="https://www.canva.com/design/DAGsky-mc0M/650QuBfgNT26gEcbNZaQIg/edit?utm_content=DAGsky-mc0M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="hover:underline">
+                                            Social Media Simternship®
+                                        </a>
+                                    </h3>
+                                    <p class="text-slate-200 mb-4 text-sm">Developed a social media launch strategy, using audience analysis and performance data to select platforms, manage influencer campaigns, and drive revenue with a high ROI.</p>
+                                </div>
+                                <div class="tag-row flex flex-wrap gap-2 mt-auto">
+                                    <span class="skill-tag">Social Media</span><span class="skill-tag">Influencer Marketing</span><span class="skill-tag">Data Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://www.canva.com/design/DAGsky-mc0M/650QuBfgNT26gEcbNZaQIg/edit?utm_content=DAGsky-mc0M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="project-card-overlay text-center text-white p-6">
+                            <div class="mb-3"><p class="text-3xl font-bold">$66K+</p><p class="text-xs uppercase tracking-wider text-slate-300">Revenue (Instagram)</p></div>
+                            <div class="mb-3"><p class="text-3xl font-bold">3.64x</p><p class="text-xs uppercase tracking-wider text-slate-300">Influencer ROAS</p></div>
+                            <div><p class="text-3xl font-bold">80K+</p><p class="text-xs uppercase tracking-wider text-slate-300">Total Engagements</p></div>
+                        </a>
+                    </div>
 
-<!-- Card 6: Les Secrets de Loly -->
-<div class="project-card glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
-    <div class="project-card-content flex flex-col h-full justify-between">
-        <a href="https://www.canva.com/design/DAGtOb6JfWk/YB3JZ59K0zZiN2DxIqvFiA/view?utm_content=DAGtOb6JfWk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h09fb06a9df" target="_blank" rel="noopener noreferrer">
-            <img src="images/Project5.png" alt="Les Secrets de Loly Campaign Moodboard" class="w-full h-48 object-cover">
-        </a>
-        <div class="p-6 flex flex-col flex-grow justify-between">
-            <div>
-                <h3 class="text-xl font-bold mb-2 text-white">
-                    <a href="https://www.canva.com/design/DAGtOb6JfWk/YB3JZ59K0zZiN2DxIqvFiA/view?utm_content=DAGtOb6JfWk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h09fb06a9df" target="_blank" rel="noopener noreferrer" class="hover:underline">
-                        Influencer Marketing Strategy: Les Secrets de Loly
-                    </a>
-                </h3>
-                <p class="text-slate-200 mb-4 text-sm">Analyzed an existing influencer campaign, identified key problems, and developed a new, data-driven strategy to reconnect with the brand's core community through authentic content and diversified influencer partnerships.</p>
-            </div>
-            <div class="tag-row flex flex-wrap gap-2 mt-auto">
-                <span class="skill-tag">Influencer Marketing</span><span class="skill-tag">Brand Strategy</span><span class="skill-tag">Community Management</span>
-            </div>
-        </div>
-    </div>
-    <a href="https://www.canva.com/design/DAGtOb6JfWk/YB3JZ59K0zZiN2DxIqvFiA/view?utm_content=DAGtOb6JfWk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h09fb06a9df" target="_blank" rel="noopener noreferrer" class="project-card-overlay text-center text-white p-6">
-        <p class="text-2xl font-bold">Community-Focused</p>
-        <p class="text-xs uppercase tracking-wider mb-4 text-slate-300">Strategy</p>
-        <p class="text-2xl font-bold">Data-Driven</p>
-        <p class="text-xs uppercase tracking-wider text-slate-300">Influencer Selection</p>
-    </a>
-</div>
+                    <!-- Card 6: Les Secrets de Loly -->
+                    <div class="project-card glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
+                        <div class="project-card-content flex flex-col h-full justify-between">
+                            <a href="https://www.canva.com/design/DAGtOb6JfWk/YB3JZ59K0zZiN2DxIqvFiA/view?utm_content=DAGtOb6JfWk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h09fb06a9df" target="_blank" rel="noopener noreferrer">
+                                <img src="images/Project5.png" alt="Les Secrets de Loly Campaign Moodboard" class="w-full h-48 object-cover">
+                            </a>
+                            <div class="p-6 flex flex-col flex-grow justify-between">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2 text-white">
+                                        <a href="https://www.canva.com/design/DAGtOb6JfWk/YB3JZ59K0zZiN2DxIqvFiA/view?utm_content=DAGtOb6JfWk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h09fb06a9df" target="_blank" rel="noopener noreferrer" class="hover:underline">
+                                            Influencer Marketing Strategy: Les Secrets de Loly
+                                        </a>
+                                    </h3>
+                                    <p class="text-slate-200 mb-4 text-sm">Analyzed an existing influencer campaign, identified key problems, and developed a new, data-driven strategy to reconnect with the brand's core community through authentic content and diversified influencer partnerships.</p>
+                                </div>
+                                <div class="tag-row flex flex-wrap gap-2 mt-auto">
+                                    <span class="skill-tag">Influencer Marketing</span><span class="skill-tag">Brand Strategy</span><span class="skill-tag">Community Management</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://www.canva.com/design/DAGtOb6JfWk/YB3JZ59K0zZiN2DxIqvFiA/view?utm_content=DAGtOb6JfWk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h09fb06a9df" target="_blank" rel="noopener noreferrer" class="project-card-overlay text-center text-white p-6">
+                            <p class="text-2xl font-bold">Community-Focused</p>
+                            <p class="text-xs uppercase tracking-wider mb-4 text-slate-300">Strategy</p>
+                            <p class="text-2xl font-bold">Data-Driven</p>
+                            <p class="text-xs uppercase tracking-wider text-slate-300">Influencer Selection</p>
+                        </a>
+                    </div>
 
-        <!-- Phase 4: Skills Section Styling Normalization -->
+                </div><!-- End .project-grid -->
+            </div><!-- End .container -->
+        </section><!-- End #projects -->
+
+        <!-- Skills Section -->
         <section id="skills" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
@@ -789,232 +765,230 @@
             </div>
         </section>
 
-        <!-- Phase 2: Experience Timeline Overhaul -->
-       <section id="experience" class="py-20">
-    <div class="container mx-auto px-6">
-        <div class="rounded-2xl bg-slate-950/60 border border-white/10 max-w-3xl mx-auto p-8 md:p-12 backdrop-blur-md">
-            <h2 class="section-title text-white text-3xl font-bold mb-8">Professional Experience</h2>
-            
-            <div class="space-y-10">
-                <!-- 1. Lallemand Brewing -->
-                <div>
-                    <p class="text-sm text-purple-300 font-medium">Mar 2026 - Sep 2026</p>
-                    <h3 class="text-xl font-bold text-white">SEO & Analytics Intern</h3>
-                    <p class="font-semibold text-slate-300 mb-3">Lallemand Brewing, Toulouse</p>
-                    <ul class="space-y-2.5 text-sm leading-relaxed text-slate-200">
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Designed and maintain a GTM tracking architecture of 20+ tags across 10 core event frameworks, troubleshooting tag health across a trilingual site (EN/FR/ES)</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Implemented and maintained Meta Pixel and Reddit Pixel tags within the GTM container to support campaigns run by external advertising consultancies, gaining hands-on experience with pixel setup and troubleshooting</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Built two GA4 performance dashboards from scratch in Looker Studio, spanning three domains (main website, e-shop, and single landing pages): a website analytics dashboard and an e-shop commercial dashboard, turning raw event data into decision-ready views for stakeholders</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Audited and evaluated digital content across 150+ web pages to ensure high readability, clear messaging, and alignment with target audience expectations</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Conducted SEO audits across 2 websites and led a site-wide keyword mapping strategy using Search Console, Keyword Planner, and internal dashboard data</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Managed WordPress content operations, authoring and translating blog articles and knowledge-center pages into English and French, and coordinating AI-agent-assisted translation into Spanish</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Maintained and utilized Microsoft's Customer Data Platform (CDP) for email workflows, ensuring high standards of data management and data hygiene</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Identified GEO (Generative Engine Optimization) as a strategic gap and delivered 3 presentations to the marketing team, producing 3 deliverables: a GEO best-practices content template, a Copilot Studio agent for GEO-friendly FAQ and content drafting, and a standing GEO checklist adopted for all future content creation</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Managed social media content operations across EN/FR/ES using Hootsuite, and handled community interactions and engagement</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Delivered weekly updates and presentations to align the marketing team on tracking, SEO, AI-search, and social initiatives</span>
-                        </li>
-                    </ul>
-                </div>
+        <!-- Experience Section -->
+        <section id="experience" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="rounded-2xl bg-slate-950/60 border border-white/10 max-w-3xl mx-auto p-8 md:p-12 backdrop-blur-md">
+                    <h2 class="section-title text-white text-3xl font-bold mb-8">Professional Experience</h2>
+                    
+                    <div class="space-y-10">
+                        <!-- 1. Lallemand Brewing -->
+                        <div>
+                            <p class="text-sm text-purple-300 font-medium">Mar 2026 - Sep 2026</p>
+                            <h3 class="text-xl font-bold text-white">SEO & Analytics Intern</h3>
+                            <p class="font-semibold text-slate-300 mb-3">Lallemand Brewing, Toulouse</p>
+                            <ul class="space-y-2.5 text-sm leading-relaxed text-slate-200">
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Designed and maintain a GTM tracking architecture of 20+ tags across 10 core event frameworks, troubleshooting tag health across a trilingual site (EN/FR/ES)</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Implemented and maintained Meta Pixel and Reddit Pixel tags within the GTM container to support campaigns run by external advertising consultancies, gaining hands-on experience with pixel setup and troubleshooting</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Built two GA4 performance dashboards from scratch in Looker Studio, spanning three domains (main website, e-shop, and single landing pages): a website analytics dashboard and an e-shop commercial dashboard, turning raw event data into decision-ready views for stakeholders</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Audited and evaluated digital content across 150+ web pages to ensure high readability, clear messaging, and alignment with target audience expectations</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Conducted SEO audits across 2 websites and led a site-wide keyword mapping strategy using Search Console, Keyword Planner, and internal dashboard data</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Managed WordPress content operations, authoring and translating blog articles and knowledge-center pages into English and French, and coordinating AI-agent-assisted translation into Spanish</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Maintained and utilized Microsoft's Customer Data Platform (CDP) for email workflows, ensuring high standards of data management and data hygiene</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Identified GEO (Generative Engine Optimization) as a strategic gap and delivered 3 presentations to the marketing team, producing 3 deliverables: a GEO best-practices content template, a Copilot Studio agent for GEO-friendly FAQ and content drafting, and a standing GEO checklist adopted for all future content creation</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Managed social media content operations across EN/FR/ES using Hootsuite, and handled community interactions and engagement</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Delivered weekly updates and presentations to align the marketing team on tracking, SEO, AI-search, and social initiatives</span>
+                                </li>
+                            </ul>
+                        </div>
 
-                <!-- 2. Education Line -->
-                <div>
-                    <p class="text-sm text-slate-400 italic">MSc in Digital & Data Marketing - NEOMA Business School, Reims (Sep 2024 - Present)</p>
-                </div>
+                        <!-- 2. Education Line -->
+                        <div>
+                            <p class="text-sm text-slate-400 italic">MSc in Digital & Data Marketing - NEOMA Business School, Reims (Sep 2024 - Present)</p>
+                        </div>
 
-                <!-- 3. SATIATE -->
-                <div>
-                    <p class="text-sm text-purple-300 font-medium">Jan 2025 - Apr 2025</p>
-                    <h3 class="text-xl font-bold text-white">Marketing & CX Intern (Remote)</h3>
-                    <p class="font-semibold text-slate-300 mb-3">SATIATE, Mumbai</p>
-                    <ul class="space-y-2.5 text-sm leading-relaxed text-slate-200">
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Managed social media content calendar and produced 20+ digital marketing assets for brand campaigns across LinkedIn and Instagram</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Built a 150+ lead pipeline using LinkedIn Sales Navigator and HubSpot CRM to support demand-generation efforts</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Tracked campaign KPIs via HubSpot, analyzed weekly customer feedback data to identify 3 core churn drivers, informing retention initiatives that lifted subscriber retention by 10%</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Built client-facing weekly performance decks and supported email marketing deliverables</span>
-                        </li>
-                    </ul>
-                </div>
+                        <!-- 3. SATIATE -->
+                        <div>
+                            <p class="text-sm text-purple-300 font-medium">Jan 2025 - Apr 2025</p>
+                            <h3 class="text-xl font-bold text-white">Marketing & CX Intern (Remote)</h3>
+                            <p class="font-semibold text-slate-300 mb-3">SATIATE, Mumbai</p>
+                            <ul class="space-y-2.5 text-sm leading-relaxed text-slate-200">
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Managed social media content calendar and produced 20+ digital marketing assets for brand campaigns across LinkedIn and Instagram</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Built a 150+ lead pipeline using LinkedIn Sales Navigator and HubSpot CRM to support demand-generation efforts</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Tracked campaign KPIs via HubSpot, analyzed weekly customer feedback data to identify 3 core churn drivers, informing retention initiatives that lifted subscriber retention by 10%</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Built client-facing weekly performance decks and supported email marketing deliverables</span>
+                                </li>
+                            </ul>
+                        </div>
 
-                <!-- 4. ANAMIVA -->
-                <div>
-                    <p class="text-sm text-purple-300 font-medium">Oct 2023 - May 2024</p>
-                    <h3 class="text-xl font-bold text-white">Kitchen & Creative Support</h3>
-                    <p class="font-semibold text-slate-300 mb-3">ANAMIVA by AM Kollection, Goa</p>
-                    <ul class="space-y-2.5 text-sm leading-relaxed text-slate-200">
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Led a new menu launch on a 3-month timeline, driving a 15% increase in post-launch customer engagement</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Coordinated 5 promotional events that contributed to a 20% increase in food & beverage sales</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Conducted market analysis to identify 3 key consumer behavior drivers, supporting growth into a new customer segment</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Led content audit and copywriting for digital brand identity, coordinating creative workflows and producing written and visual marketing assets</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Presented promotional and brand development strategies to senior stakeholders</span>
-                        </li>
-                    </ul>
-                </div>
+                        <!-- 4. ANAMIVA -->
+                        <div>
+                            <p class="text-sm text-purple-300 font-medium">Oct 2023 - May 2024</p>
+                            <h3 class="text-xl font-bold text-white">Kitchen & Creative Support</h3>
+                            <p class="font-semibold text-slate-300 mb-3">ANAMIVA by AM Kollection, Goa</p>
+                            <ul class="space-y-2.5 text-sm leading-relaxed text-slate-200">
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Led a new menu launch on a 3-month timeline, driving a 15% increase in post-launch customer engagement</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Coordinated 5 promotional events that contributed to a 20% increase in food & beverage sales</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Conducted market analysis to identify 3 key consumer behavior drivers, supporting growth into a new customer segment</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Led content audit and copywriting for digital brand identity, coordinating creative workflows and producing written and visual marketing assets</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Presented promotional and brand development strategies to senior stakeholders</span>
+                                </li>
+                            </ul>
+                        </div>
 
-                <!-- 5. Hospitality Roles -->
-                <div>
-                    <p class="text-sm text-purple-300 font-medium">May 2019 - July 2023</p>
-                    <h3 class="text-xl font-bold text-white">Hospitality Roles</h3>
-                    <p class="font-semibold text-slate-300">The Leela Palace, Bangalore · Taj Mahal Palace and Towers, Mumbai · MEGU, The Leela Palace, New Delhi</p>
-                    <div class="mt-1 mb-3 text-xs text-slate-400 space-y-0.5">
-                        <p>• Vocational Industrial Trainee, The Leela Palace, Bangalore (May 2019 - Jul 2019)</p>
-                        <p>• Marketing & Food Production Intern, Taj Mahal Palace and Towers, Mumbai (Sept 2021 - Jan 2022)</p>
-                        <p>• Commis Chef, MEGU, The Leela Palace, New Delhi (Jul 2022 - Jul 2023)</p>
+                        <!-- 5. Hospitality Roles -->
+                        <div>
+                            <p class="text-sm text-purple-300 font-medium">May 2019 - July 2023</p>
+                            <h3 class="text-xl font-bold text-white">Hospitality Roles</h3>
+                            <p class="font-semibold text-slate-300">The Leela Palace, Bangalore · Taj Mahal Palace and Towers, Mumbai · MEGU, The Leela Palace, New Delhi</p>
+                            <div class="mt-1 mb-3 text-xs text-slate-400 space-y-0.5">
+                                <p>• Vocational Industrial Trainee, The Leela Palace, Bangalore (May 2019 - Jul 2019)</p>
+                                <p>• Marketing & Food Production Intern, Taj Mahal Palace and Towers, Mumbai (Sept 2021 - Jan 2022)</p>
+                                <p>• Commis Chef, MEGU, The Leela Palace, New Delhi (Jul 2022 - Jul 2023)</p>
+                            </div>
+                            <ul class="space-y-2.5 text-sm leading-relaxed text-slate-200">
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Held three client-facing roles across luxury hospitality brands, rotating across F&B, kitchen operations, and marketing/guest-experience support</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Built foundational skills in service standards, brand consistency, and guest-experience management in premium, high-pressure environments</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
+                                        <path d="M0 0L6 4L0 8V0Z"/>
+                                    </svg>
+                                    <span>Supported marketing and food production initiatives during the transition into a full-time marketing path</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="space-y-2.5 text-sm leading-relaxed text-slate-200">
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Held three client-facing roles across luxury hospitality brands, rotating across F&B, kitchen operations, and marketing/guest-experience support</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Built foundational skills in service standards, brand consistency, and guest-experience management in premium, high-pressure environments</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-2 h-2 mt-1.5 flex-shrink-0 text-purple-400 fill-current" viewBox="0 0 6 8">
-                                <path d="M0 0L6 4L0 8V0Z"/>
-                            </svg>
-                            <span>Supported marketing and food production initiatives during the transition into a full-time marketing path</span>
-                        </li>
-                    </ul>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-        <!-- Phase 3: Certifications & Training Refinement -->
+        <!-- Certifications Section -->
         <section id="certifications" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="rounded-2xl bg-slate-950/60 border border-white/10 max-w-4xl mx-auto p-8 md:p-12 backdrop-blur-md">
                     <h2 class="text-3xl font-bold mb-10 text-center text-white">Certifications & Training</h2>
                     
-                  <!-- Badge Grid (4 Core Badges) -->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
-    <div class="glass-card p-4 rounded-xl flex flex-col items-center text-center">
-        <div class="h-20 w-full flex items-center justify-center mb-2">
-            <img src="images/yoast.png" alt="Yoast WordPress" class="max-h-full object-contain">
-        </div>
-        <p class="text-xs font-semibold text-slate-200">Yoast WordPress</p>
-    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
+                        <div class="glass-card p-4 rounded-xl flex flex-col items-center text-center">
+                            <div class="h-20 w-full flex items-center justify-center mb-2">
+                                <img src="images/yoast.png" alt="Yoast WordPress" class="max-h-full object-contain">
+                            </div>
+                            <p class="text-xs font-semibold text-slate-200">Yoast WordPress</p>
+                        </div>
 
-    <div class="glass-card p-4 rounded-xl flex flex-col items-center text-center">
-        <div class="h-20 w-full flex items-center justify-center mb-2">
-            <img src="images/G A Badge.png" alt="Google Analytics" class="max-h-full object-contain">
-        </div>
-        <p class="text-xs font-semibold text-slate-200">Google Analytics</p>
-    </div>
+                        <div class="glass-card p-4 rounded-xl flex flex-col items-center text-center">
+                            <div class="h-20 w-full flex items-center justify-center mb-2">
+                                <img src="images/G A Badge.png" alt="Google Analytics" class="max-h-full object-contain">
+                            </div>
+                            <p class="text-xs font-semibold text-slate-200">Google Analytics</p>
+                        </div>
 
-    <div class="glass-card p-4 rounded-xl flex flex-col items-center text-center">
-        <div class="h-20 w-full flex items-center justify-center mb-2">
-            <img src="images/Hubspot.png" alt="Hubspot Marketing Hub" class="max-h-full object-contain">
-        </div>
-        <p class="text-xs font-semibold text-slate-200">Hubspot Marketing Hub</p>
-    </div>
+                        <div class="glass-card p-4 rounded-xl flex flex-col items-center text-center">
+                            <div class="h-20 w-full flex items-center justify-center mb-2">
+                                <img src="images/Hubspot.png" alt="Hubspot Marketing Hub" class="max-h-full object-contain">
+                            </div>
+                            <p class="text-xs font-semibold text-slate-200">Hubspot Marketing Hub</p>
+                        </div>
 
-    <div class="glass-card p-4 rounded-xl flex flex-col items-center text-center">
-        <div class="h-20 w-full flex items-center justify-center mb-2">
-            <img src="images/Meta.png" alt="Meta Business Suite" class="max-h-full object-contain">
-        </div>
-        <p class="text-xs font-semibold text-slate-200">Meta Business Suite</p>
-    </div>
-</div>
-
+                        <div class="glass-card p-4 rounded-xl flex flex-col items-center text-center">
+                            <div class="h-20 w-full flex items-center justify-center mb-2">
+                                <img src="images/Meta.png" alt="Meta Business Suite" class="max-h-full object-contain">
+                            </div>
+                            <p class="text-xs font-semibold text-slate-200">Meta Business Suite</p>
+                        </div>
+                    </div>
 
                     <hr class="my-8 border-white/10">
 
@@ -1026,7 +1000,7 @@
                         <a href="https://www.canva.com/design/DAGswmF3IRk/-6OYsdVKiC4SW9JE3AQWhw/edit?utm_content=DAGswmF3IRk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="block hover:text-purple-300 hover:underline">Design Thinking for Innovation - University of Virginia</a>
                         <a href="https://www.canva.com/design/DAGswvnPGic/2hx-rvuzvq6VzkeL4cuV1Q/edit?utm_content=DAGswvnPGic&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="block hover:text-purple-300 hover:underline">Understanding Research Methods - University of London</a>
                         <a href="https://www.canva.com/design/DAGswuDXXy8/Hw1XcYEPKJoUg5MHn44uCQ/edit?utm_content=DAGswuDXXy8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" class="block hover:text-purple-300 hover:underline">Data Collection - University of Michigan</a>
-                      <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:e7e3561b-fb7a-4b52-bc27-fbef91bafe69" target="_blank" rel="noopener noreferrer" class="block hover:text-purple-300 hover:underline">Ethics of AI — University of Helsinki</a>
+                        <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:e7e3561b-fb7a-4b52-bc27-fbef91bafe69" target="_blank" rel="noopener noreferrer" class="block hover:text-purple-300 hover:underline">Ethics of AI — University of Helsinki</a>
                         <a href="https://www.canva.com/design/DAG0eYv-A_Q/GCf3EwqGYMGTzlz85WXEBg/view?utm_content=DAG0eYv-A_Q&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h34cbdccd43" target="_blank" rel="noopener noreferrer" class="block hover:text-purple-300 hover:underline">Camera Control - Michigan State University</a>
                     </div>
 
@@ -1041,6 +1015,7 @@
             </div>
         </section>
         
+        <!-- Contact Section -->
         <section id="contact" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="rounded-2xl bg-slate-950/60 border border-white/10 max-w-xl mx-auto p-8 md:p-12 backdrop-blur-md text-center">
