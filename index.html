@@ -421,6 +421,140 @@
                 flex-direction: column;
             }
         }
+
+        /* Dashboard carousel (Lallemand Analytics card) */
+        .project-card.media-interactive:hover .project-card-content {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .project-card.media-interactive:hover .project-card-overlay {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .dashboard-carousel {
+            position: relative;
+            width: 100%;
+            height: 12rem;
+            overflow: hidden;
+            background: #0c0c14;
+        }
+        .dashboard-carousel-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s ease-in-out;
+        }
+        .dashboard-slide {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+        .dashboard-carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 2;
+            opacity: 0.85;
+        }
+        .dashboard-carousel-arrow:hover {
+            opacity: 1;
+        }
+        .dashboard-carousel-arrow--prev { left: 8px; }
+        .dashboard-carousel-arrow--next { right: 8px; }
+        .dashboard-carousel-dots {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 2;
+        }
+        .dashboard-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+        }
+        .dashboard-dot.active {
+            background: #fff;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox-image {
+            max-width: 90vw;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 0.75rem;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .lightbox-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 9999px;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-arrow--prev { left: 20px; }
+        .lightbox-arrow--next { right: 20px; }
+        .lightbox-counter {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -430,6 +564,15 @@
         <div class="aurora-blob aurora-blob--purple-2"></div>
         <div class="aurora-blob aurora-blob--coral-2"></div>
     </div>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+        <button type="button" class="lightbox-arrow lightbox-arrow--prev" aria-label="Previous image">&#8249;</button>
+        <img src="" alt="" class="lightbox-image" id="lightbox-image">
+        <button type="button" class="lightbox-arrow lightbox-arrow--next" aria-label="Next image">&#8250;</button>
+        <div class="lightbox-counter" id="lightbox-counter">1 / 5</div>
+    </div>
+
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQ8XSZDZ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
@@ -544,24 +687,41 @@
                 <div class="project-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
 
                     <!-- Card 1: Lallemand Brewing Analytics -->
-                    <div class="project-card glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
+                    <div class="project-card media-interactive glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
                         <div class="project-card-content flex flex-col h-full justify-between">
-                            <img src="images/Dashboard1.png" alt="Dashboard & Analytics" class="w-full h-48 object-cover">
+                            <div class="dashboard-carousel" id="dashboard-carousel">
+                                <div class="dashboard-carousel-track" id="dashboard-carousel-track">
+                                    <img src="images/Dashboard1.png" alt="Top key events, downloads, forms, and CTA actions dashboard" class="dashboard-slide" data-index="0">
+                                    <img src="images/Dashboard2.png" alt="Sessions over time by channel group dashboard" class="dashboard-slide" data-index="1">
+                                    <img src="images/Dashboard3.png" alt="Website overview dashboard: sessions, bounce rate, views, performance by channel, device, and country" class="dashboard-slide" data-index="2">
+                                    <img src="images/Dashboard5.png" alt="E-shop commercial dashboard: gross revenue, transactions, purchase rate" class="dashboard-slide" data-index="3">
+                                    <img src="images/Dashboard6.png" alt="Product and engagement dashboard: event counts, top sections, downloads, checkout series" class="dashboard-slide" data-index="4">
+                                </div>
+                                <button type="button" class="dashboard-carousel-arrow dashboard-carousel-arrow--prev" aria-label="Previous dashboard">&#8249;</button>
+                                <button type="button" class="dashboard-carousel-arrow dashboard-carousel-arrow--next" aria-label="Next dashboard">&#8250;</button>
+                                <div class="dashboard-carousel-dots">
+                                    <span class="dashboard-dot active" data-index="0"></span>
+                                    <span class="dashboard-dot" data-index="1"></span>
+                                    <span class="dashboard-dot" data-index="2"></span>
+                                    <span class="dashboard-dot" data-index="3"></span>
+                                    <span class="dashboard-dot" data-index="4"></span>
+                                </div>
+                            </div>
                             <div class="p-6 flex flex-col flex-grow justify-between">
                                 <div>
                                     <h3 class="text-xl font-bold mb-2 text-white">Lallemand Brewing: Analytics & Dashboarding</h3>
                                     <p class="text-slate-200 mb-4 text-sm">Lallemand Brewing had no centralized view of website or e-shop performance. I built a full GTM tracking architecture of 20+ tags across 10 event frameworks for a trilingual site, then built two GA4 performance dashboards from scratch in Looker Studio, a website analytics dashboard and an e-shop commercial dashboard, turning raw event data into decision-ready views for stakeholders.</p>
+                                    <div class="grid grid-cols-2 gap-2 mb-4 text-xs text-slate-300">
+                                        <div><span class="text-white font-bold">2</span> Dashboards Built</div>
+                                        <div><span class="text-white font-bold">20+</span> GTM Tags</div>
+                                        <div><span class="text-white font-bold">10</span> Event Frameworks</div>
+                                        <div><span class="text-white font-bold">3</span> Languages Tracked</div>
+                                    </div>
                                 </div>
                                 <div class="tag-row flex flex-wrap gap-2 mt-auto">
                                     <span class="skill-tag">GA4/GTM</span><span class="skill-tag">Technical Analytics</span><span class="skill-tag">Dashboarding</span><span class="skill-tag">Data Visualization</span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="project-card-overlay text-center text-white p-6">
-                            <div class="mb-3"><p class="text-3xl font-bold">2</p><p class="text-xs uppercase tracking-wider text-slate-300">Dashboards Built</p></div>
-                            <div class="mb-3"><p class="text-3xl font-bold">20+</p><p class="text-xs uppercase tracking-wider text-slate-300">GTM Tags</p></div>
-                            <div class="mb-3"><p class="text-3xl font-bold">10</p><p class="text-xs uppercase tracking-wider text-slate-300">Event Frameworks</p></div>
-                            <div><p class="text-3xl font-bold">3</p><p class="text-xs uppercase tracking-wider text-slate-300">Languages Tracked</p></div>
                         </div>
                     </div>
 
@@ -1116,6 +1276,88 @@
                 }
                 setInterval(slide, 3000);
             }
+
+            // Dashboard carousel + lightbox (Lallemand Analytics card)
+            (function() {
+                const track = document.getElementById('dashboard-carousel-track');
+                if (!track) return;
+
+                const slides = Array.from(track.querySelectorAll('.dashboard-slide'));
+                const dots = Array.from(document.querySelectorAll('.dashboard-dot'));
+                const prevBtn = document.querySelector('.dashboard-carousel-arrow--prev');
+                const nextBtn = document.querySelector('.dashboard-carousel-arrow--next');
+                let current = 0;
+
+                function updateCarousel() {
+                    track.style.transform = `translateX(-${current * 100}%)`;
+                    dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+                }
+
+                function goTo(index) {
+                    current = (index + slides.length) % slides.length;
+                    updateCarousel();
+                }
+
+                if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(current - 1); });
+                if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(current + 1); });
+                dots.forEach((dot, i) => dot.addEventListener('click', (e) => { e.stopPropagation(); goTo(i); }));
+
+                // Lightbox
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImage = document.getElementById('lightbox-image');
+                const lightboxCounter = document.getElementById('lightbox-counter');
+                let lightboxIndex = 0;
+
+                function updateLightboxImage() {
+                    const img = slides[lightboxIndex];
+                    lightboxImage.src = img.src;
+                    lightboxImage.alt = img.alt;
+                    lightboxCounter.textContent = `${lightboxIndex + 1} / ${slides.length}`;
+                }
+
+                function openLightbox(index) {
+                    lightboxIndex = index;
+                    updateLightboxImage();
+                    lightbox.classList.add('active');
+                    lightbox.setAttribute('aria-hidden', 'false');
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function closeLightbox() {
+                    lightbox.classList.remove('active');
+                    lightbox.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                }
+
+                function lightboxNext() {
+                    lightboxIndex = (lightboxIndex + 1) % slides.length;
+                    updateLightboxImage();
+                }
+
+                function lightboxPrev() {
+                    lightboxIndex = (lightboxIndex - 1 + slides.length) % slides.length;
+                    updateLightboxImage();
+                }
+
+                slides.forEach((img, i) => {
+                    img.addEventListener('click', () => openLightbox(i));
+                });
+
+                document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+                document.querySelector('.lightbox-arrow--next').addEventListener('click', lightboxNext);
+                document.querySelector('.lightbox-arrow--prev').addEventListener('click', lightboxPrev);
+
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox) closeLightbox();
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (!lightbox.classList.contains('active')) return;
+                    if (e.key === 'Escape') closeLightbox();
+                    if (e.key === 'ArrowRight') lightboxNext();
+                    if (e.key === 'ArrowLeft') lightboxPrev();
+                });
+            })();
         });
     </script>
 </body>
