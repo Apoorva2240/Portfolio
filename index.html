@@ -423,76 +423,25 @@
         }
 
         /* Dashboard carousel (Lallemand Analytics card) */
-        .project-card.media-interactive:hover .project-card-content {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .project-card.media-interactive:hover .project-card-overlay {
-            opacity: 0;
-            pointer-events: none;
-        }
         .dashboard-carousel {
             position: relative;
             width: 100%;
             height: 12rem;
             overflow: hidden;
             background: #0c0c14;
+            cursor: pointer;
         }
         .dashboard-carousel-track {
             display: flex;
             width: 100%;
             height: 100%;
-            transition: transform 0.4s ease-in-out;
+            transition: transform 0.6s ease-in-out;
         }
         .dashboard-slide {
             width: 100%;
             height: 100%;
             object-fit: cover;
             flex-shrink: 0;
-            cursor: pointer;
-        }
-        .dashboard-carousel-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            border: none;
-            width: 32px;
-            height: 32px;
-            border-radius: 9999px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            line-height: 1;
-            cursor: pointer;
-            z-index: 2;
-            opacity: 0.85;
-        }
-        .dashboard-carousel-arrow:hover {
-            opacity: 1;
-        }
-        .dashboard-carousel-arrow--prev { left: 8px; }
-        .dashboard-carousel-arrow--next { right: 8px; }
-        .dashboard-carousel-dots {
-            position: absolute;
-            bottom: 8px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 6px;
-            z-index: 2;
-        }
-        .dashboard-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 9999px;
-            background: rgba(255, 255, 255, 0.4);
-            cursor: pointer;
-        }
-        .dashboard-dot.active {
-            background: #fff;
         }
 
         /* Lightbox */
@@ -687,7 +636,7 @@
                 <div class="project-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
 
                     <!-- Card 1: Lallemand Brewing Analytics -->
-                    <div class="project-card media-interactive glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
+                    <div class="project-card glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
                         <div class="project-card-content flex flex-col h-full justify-between">
                             <div class="dashboard-carousel" id="dashboard-carousel">
                                 <div class="dashboard-carousel-track" id="dashboard-carousel-track">
@@ -697,31 +646,23 @@
                                     <img src="images/Dashboard5.png" alt="E-shop commercial dashboard: gross revenue, transactions, purchase rate" class="dashboard-slide" data-index="3">
                                     <img src="images/Dashboard6.png" alt="Product and engagement dashboard: event counts, top sections, downloads, checkout series" class="dashboard-slide" data-index="4">
                                 </div>
-                                <button type="button" class="dashboard-carousel-arrow dashboard-carousel-arrow--prev" aria-label="Previous dashboard">&#8249;</button>
-                                <button type="button" class="dashboard-carousel-arrow dashboard-carousel-arrow--next" aria-label="Next dashboard">&#8250;</button>
-                                <div class="dashboard-carousel-dots">
-                                    <span class="dashboard-dot active" data-index="0"></span>
-                                    <span class="dashboard-dot" data-index="1"></span>
-                                    <span class="dashboard-dot" data-index="2"></span>
-                                    <span class="dashboard-dot" data-index="3"></span>
-                                    <span class="dashboard-dot" data-index="4"></span>
-                                </div>
                             </div>
                             <div class="p-6 flex flex-col flex-grow justify-between">
                                 <div>
                                     <h3 class="text-xl font-bold mb-2 text-white">Lallemand Brewing: Analytics & Dashboarding</h3>
                                     <p class="text-slate-200 mb-4 text-sm">Lallemand Brewing had no centralized view of website or e-shop performance. I built a full GTM tracking architecture of 20+ tags across 10 event frameworks for a trilingual site, then built two GA4 performance dashboards from scratch in Looker Studio, a website analytics dashboard and an e-shop commercial dashboard, turning raw event data into decision-ready views for stakeholders.</p>
-                                    <div class="grid grid-cols-2 gap-2 mb-4 text-xs text-slate-300">
-                                        <div><span class="text-white font-bold">2</span> Dashboards Built</div>
-                                        <div><span class="text-white font-bold">20+</span> GTM Tags</div>
-                                        <div><span class="text-white font-bold">10</span> Event Frameworks</div>
-                                        <div><span class="text-white font-bold">3</span> Languages Tracked</div>
-                                    </div>
                                 </div>
                                 <div class="tag-row flex flex-wrap gap-2 mt-auto">
                                     <span class="skill-tag">GA4/GTM</span><span class="skill-tag">Technical Analytics</span><span class="skill-tag">Dashboarding</span><span class="skill-tag">Data Visualization</span>
                                 </div>
                             </div>
+                        </div>
+                        <div class="project-card-overlay text-center text-white p-6" id="dashboard-overlay-trigger" style="cursor: pointer;">
+                            <div class="mb-3"><p class="text-3xl font-bold">2</p><p class="text-xs uppercase tracking-wider text-slate-300">Dashboards Built</p></div>
+                            <div class="mb-3"><p class="text-3xl font-bold">20+</p><p class="text-xs uppercase tracking-wider text-slate-300">GTM Tags</p></div>
+                            <div class="mb-3"><p class="text-3xl font-bold">10</p><p class="text-xs uppercase tracking-wider text-slate-300">Event Frameworks</p></div>
+                            <div><p class="text-3xl font-bold">3</p><p class="text-xs uppercase tracking-wider text-slate-300">Languages Tracked</p></div>
+                            <p class="text-xs uppercase tracking-wider text-slate-400 mt-4">Click to view dashboards</p>
                         </div>
                     </div>
 
@@ -1277,30 +1218,23 @@
                 setInterval(slide, 3000);
             }
 
-            // Dashboard carousel + lightbox (Lallemand Analytics card)
+            // Dashboard carousel (auto-rotating, no in-card controls) + lightbox (Lallemand Analytics card)
             (function() {
                 const track = document.getElementById('dashboard-carousel-track');
                 if (!track) return;
 
                 const slides = Array.from(track.querySelectorAll('.dashboard-slide'));
-                const dots = Array.from(document.querySelectorAll('.dashboard-dot'));
-                const prevBtn = document.querySelector('.dashboard-carousel-arrow--prev');
-                const nextBtn = document.querySelector('.dashboard-carousel-arrow--next');
                 let current = 0;
 
                 function updateCarousel() {
                     track.style.transform = `translateX(-${current * 100}%)`;
-                    dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
                 }
 
-                function goTo(index) {
-                    current = (index + slides.length) % slides.length;
+                // Auto-advance every 3.5s, same pattern as the Satiate carousel
+                setInterval(() => {
+                    current = (current + 1) % slides.length;
                     updateCarousel();
-                }
-
-                if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(current - 1); });
-                if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(current + 1); });
-                dots.forEach((dot, i) => dot.addEventListener('click', (e) => { e.stopPropagation(); goTo(i); }));
+                }, 3500);
 
                 // Lightbox
                 const lightbox = document.getElementById('lightbox');
@@ -1339,6 +1273,14 @@
                     updateLightboxImage();
                 }
 
+                // Clicking the card overlay (shown on hover) opens the lightbox
+                // at whichever dashboard is currently displayed in the carousel
+                const overlayTrigger = document.getElementById('dashboard-overlay-trigger');
+                if (overlayTrigger) {
+                    overlayTrigger.addEventListener('click', () => openLightbox(current));
+                }
+
+                // Also allow clicking the image directly (e.g. before hover engages, or on touch devices)
                 slides.forEach((img, i) => {
                     img.addEventListener('click', () => openLightbox(i));
                 });
