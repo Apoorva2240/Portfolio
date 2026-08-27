@@ -669,22 +669,33 @@
                     <!-- Card 2: Lallemand Brewing GEO -->
                     <div class="project-card glass-card group transform hover:-translate-y-2 transition-transform duration-300 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
                         <div class="project-card-content flex flex-col h-full justify-between">
-                            <div class="w-full h-48 flex items-center justify-center bg-blue-900/40 text-white text-center font-semibold px-4">
-                                Lallemand Brewing: GEO & AI in Marketing
+                            <div class="dashboard-carousel" id="geo-carousel">
+                                <div class="dashboard-carousel-track" id="geo-carousel-track">
+                                    <img src="images/geo-agent-faq-output.png" alt="Lallemand GEO Architect agent drafting a GEO-friendly FAQ" class="dashboard-slide" data-index="0">
+                                    <img src="images/geo-agent-audit-methodology.png" alt="Lallemand GEO Architect agent audit methodology: fact-hardening, query fan-out, schema" class="dashboard-slide" data-index="1">
+                                    <img src="images/citation-gap-summary.png" alt="Off-Domain B2B Citation Auditor agent: citation gap audit executive summary" class="dashboard-slide" data-index="2">
+                                    <img src="images/citation-gap-bottomline.png" alt="Off-Domain B2B Citation Auditor agent: competitive citation gap findings and recommendation" class="dashboard-slide" data-index="3">
+                                </div>
                             </div>
                             <div class="p-6 flex flex-col flex-grow justify-between">
                                 <div>
                                     <h3 class="text-xl font-bold mb-2 text-white">Lallemand Brewing: GEO & AI in Marketing</h3>
-                                    <p class="text-slate-200 mb-4 text-sm">As GEO (Generative Engine Optimization) emerged as a gap in the brand's content strategy, I researched best practices and delivered 3 presentations to align the marketing team on AI-search readiness. This produced three deliverables: a GEO best-practices template for content creation, a Copilot Studio agent that drafts GEO-friendly FAQs and content using existing website data, and a standing checklist other teams use to verify content is GEO-friendly before publishing.</p>
+                                    <p class="text-slate-200 mb-3 text-sm">As GEO (Generative Engine Optimization) emerged as a gap in the brand's content strategy, I researched best practices and delivered 3 presentations to align the marketing team on AI-search readiness, producing 3 deliverables:</p>
+                                    <ul class="text-slate-200 text-sm mb-4 space-y-1.5 list-none">
+                                        <li><span class="text-white font-semibold">1. GEO Content Agent</span> — a Copilot Studio agent for drafting, auditing, and ideating GEO-friendly content</li>
+                                        <li><span class="text-white font-semibold">2. Citation Gap Agent</span> — a Copilot Studio agent that benchmarks competitors and identifies off-domain citation opportunities across AI search engines</li>
+                                        <li><span class="text-white font-semibold">3. GEO QC Matrix</span> — a standing checklist covering technical specs, blog content, and commercial pages. <a href="images/GEO-QC-Matrix.pdf" target="_blank" rel="noopener noreferrer" class="underline text-purple-300 hover:text-purple-200">View the checklist (PDF)</a></li>
+                                    </ul>
                                 </div>
                                 <div class="tag-row flex flex-wrap gap-2 mt-auto">
                                     <span class="skill-tag">GEO</span><span class="skill-tag">AI in Marketing</span><span class="skill-tag">Search Strategy</span><span class="skill-tag">Content Frameworks</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="project-card-overlay text-center text-white p-6">
+                        <div class="project-card-overlay text-center text-white p-6" id="geo-overlay-trigger" style="cursor: pointer;">
                             <div class="mb-4"><p class="text-4xl font-bold">3</p><p class="text-xs uppercase tracking-wider text-slate-300 mt-1">Presentations Delivered</p></div>
                             <div><p class="text-4xl font-bold">3</p><p class="text-xs uppercase tracking-wider text-slate-300 mt-1">Deliverables Shipped</p></div>
+                            <p class="text-xs uppercase tracking-wider text-slate-400 mt-4">Click to view agents in action</p>
                         </div>
                     </div>
 
@@ -1218,88 +1229,91 @@
                 setInterval(slide, 3000);
             }
 
-            // Dashboard carousel (auto-rotating, no in-card controls) + lightbox (Lallemand Analytics card)
-            (function() {
-                const track = document.getElementById('dashboard-carousel-track');
+            // Shared lightbox, reused by any card carousel on the page
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCounter = document.getElementById('lightbox-counter');
+            let activeSlides = [];
+            let lightboxIndex = 0;
+
+            function updateLightboxImage() {
+                const img = activeSlides[lightboxIndex];
+                lightboxImage.src = img.src;
+                lightboxImage.alt = img.alt;
+                lightboxCounter.textContent = `${lightboxIndex + 1} / ${activeSlides.length}`;
+            }
+
+            function openLightbox(slidesArray, index) {
+                activeSlides = slidesArray;
+                lightboxIndex = index;
+                updateLightboxImage();
+                lightbox.classList.add('active');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                lightbox.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            function lightboxNext() {
+                lightboxIndex = (lightboxIndex + 1) % activeSlides.length;
+                updateLightboxImage();
+            }
+
+            function lightboxPrev() {
+                lightboxIndex = (lightboxIndex - 1 + activeSlides.length) % activeSlides.length;
+                updateLightboxImage();
+            }
+
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-arrow--next').addEventListener('click', lightboxNext);
+            document.querySelector('.lightbox-arrow--prev').addEventListener('click', lightboxPrev);
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') lightboxNext();
+                if (e.key === 'ArrowLeft') lightboxPrev();
+            });
+
+            // Sets up one auto-rotating card carousel (no in-card controls),
+            // wired to open the shared lightbox on click, starting at
+            // whichever slide is currently showing.
+            function setupCardCarousel(trackId, overlayTriggerId) {
+                const track = document.getElementById(trackId);
                 if (!track) return;
 
-                const slides = Array.from(track.querySelectorAll('.dashboard-slide'));
+                const slides = Array.from(track.querySelectorAll('img'));
                 let current = 0;
 
                 function updateCarousel() {
                     track.style.transform = `translateX(-${current * 100}%)`;
                 }
 
-                // Auto-advance every 3.5s, same pattern as the Satiate carousel
                 setInterval(() => {
                     current = (current + 1) % slides.length;
                     updateCarousel();
                 }, 3500);
 
-                // Lightbox
-                const lightbox = document.getElementById('lightbox');
-                const lightboxImage = document.getElementById('lightbox-image');
-                const lightboxCounter = document.getElementById('lightbox-counter');
-                let lightboxIndex = 0;
-
-                function updateLightboxImage() {
-                    const img = slides[lightboxIndex];
-                    lightboxImage.src = img.src;
-                    lightboxImage.alt = img.alt;
-                    lightboxCounter.textContent = `${lightboxIndex + 1} / ${slides.length}`;
-                }
-
-                function openLightbox(index) {
-                    lightboxIndex = index;
-                    updateLightboxImage();
-                    lightbox.classList.add('active');
-                    lightbox.setAttribute('aria-hidden', 'false');
-                    document.body.style.overflow = 'hidden';
-                }
-
-                function closeLightbox() {
-                    lightbox.classList.remove('active');
-                    lightbox.setAttribute('aria-hidden', 'true');
-                    document.body.style.overflow = '';
-                }
-
-                function lightboxNext() {
-                    lightboxIndex = (lightboxIndex + 1) % slides.length;
-                    updateLightboxImage();
-                }
-
-                function lightboxPrev() {
-                    lightboxIndex = (lightboxIndex - 1 + slides.length) % slides.length;
-                    updateLightboxImage();
-                }
-
-                // Clicking the card overlay (shown on hover) opens the lightbox
-                // at whichever dashboard is currently displayed in the carousel
-                const overlayTrigger = document.getElementById('dashboard-overlay-trigger');
+                const overlayTrigger = document.getElementById(overlayTriggerId);
                 if (overlayTrigger) {
-                    overlayTrigger.addEventListener('click', () => openLightbox(current));
+                    overlayTrigger.addEventListener('click', () => openLightbox(slides, current));
                 }
 
-                // Also allow clicking the image directly (e.g. before hover engages, or on touch devices)
                 slides.forEach((img, i) => {
-                    img.addEventListener('click', () => openLightbox(i));
+                    img.addEventListener('click', () => openLightbox(slides, i));
                 });
+            }
 
-                document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-                document.querySelector('.lightbox-arrow--next').addEventListener('click', lightboxNext);
-                document.querySelector('.lightbox-arrow--prev').addEventListener('click', lightboxPrev);
-
-                lightbox.addEventListener('click', (e) => {
-                    if (e.target === lightbox) closeLightbox();
-                });
-
-                document.addEventListener('keydown', (e) => {
-                    if (!lightbox.classList.contains('active')) return;
-                    if (e.key === 'Escape') closeLightbox();
-                    if (e.key === 'ArrowRight') lightboxNext();
-                    if (e.key === 'ArrowLeft') lightboxPrev();
-                });
-            })();
+            setupCardCarousel('dashboard-carousel-track', 'dashboard-overlay-trigger');
+            setupCardCarousel('geo-carousel-track', 'geo-overlay-trigger');
         });
     </script>
 </body>
